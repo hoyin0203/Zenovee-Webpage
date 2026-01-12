@@ -1,72 +1,57 @@
-## Zenovee official website (Astro)
+# Zenovee Webpage
 
-This folder contains the **Zenovee marketing website** built with **Astro** and designed to be **Shopify-review ready** for ZenMerch:
+This repository contains the **Zenovee marketing website** built with **Astro**, designed to be **Shopify-review ready** for ZenMerch.
 
-- ZenMerch: **Features**, **Pricing**, **Demo**, **Docs**, **FAQ**
-- Legal: **Privacy**, **Terms**, **Cookies**
-- Company: **About**, **Roadmap**
-- Services + Solutions pages
-- **Contact form** backed by a Vercel-compatible API route
-- Global **scroll fade-in** + subtle **WebGL** background animation on every page
+## What’s included
 
-### Local development
+- **ZenMerch**: Overview, Features, Pricing, Demo, Docs, FAQ
+- **Shop**: ZenCraft Gifts shop landing page (`/shop`) that links out to your Shopify storefront
+- **Services**: Website / Web app / Shopify development
+- **Legal**: Privacy, Terms, Cookies
+- **Company**: About, Roadmap
+- **Contact form**: `POST /api/contact` (Vercel compatible)
+- **Animations**: Scroll reveal + subtle WebGL background
+
+## Local development
 
 ```bash
-cd website
 npm install
 npm run dev
 ```
 
-### Contact form (email delivery)
+## Environment variables
 
-The contact form posts to `POST /api/contact`.
+Copy:
+
+- `env.example` → `.env`
+
+Common:
+
+- `PUBLIC_ZENCRAFT_SHOP_URL` (optional): your ZenCraft Shopify storefront URL (used by the “Shop now!” CTA)
+
+## Contact form (email delivery)
 
 Recommended: use **Resend** on Vercel.
 
-1. Copy `env.example` → `.env`
-2. Set:
-   - `RESEND_API_KEY`
-   - `CONTACT_TO_EMAIL`
-   - (optional) `CONTACT_FROM_EMAIL`
+Set:
 
-If not configured, the endpoint still redirects to `/contact?sent=1` (so the UX isn’t broken while you’re setting up), but it will only log a warning server-side.
+- `RESEND_API_KEY`
+- `CONTACT_TO_EMAIL`
+- (optional) `CONTACT_FROM_EMAIL`
 
-### Hosting recommendation (Vercel + Sanity)
+## Sanity CMS (Next.js Studio)
 
-**Yes—Vercel + Sanity is a very solid choice** for a new company:
-
-- **Vercel**: excellent DX for Astro/Next, fast global CDN, easy preview deployments.
-- **Sanity**: flexible content modeling (great for docs/legal pages, products, FAQs), quick to iterate without code changes.
-
-Suggested domain strategy (matches your blueprint):
-
-- **Marketing**: `zenovee.com` (this site)
-- **App backend**: `zenmerch.zenovee.com` (already in use)
-- Optional later:
-  - `studio.zenovee.com` (Sanity Studio)
-
-### Sanity CMS (Next.js Studio)
-
-This repo also includes a **Next.js** app at `website/studio/` that hosts **Sanity Studio** at `/studio`.
-
-Local dev:
+This repo includes a **Next.js** app at `studio/` that hosts **Sanity Studio**.
 
 ```bash
-cd website/studio
+cd studio
 npm install
 npm run dev
 ```
 
 Setup:
 
-- Copy `website/studio/env.example` → `website/studio/.env.local`
+- Copy `studio/env.example` → `studio/.env.local`
 - Set:
   - `NEXT_PUBLIC_SANITY_PROJECT_ID`
   - `NEXT_PUBLIC_SANITY_DATASET`
-
-Deploy suggestion:
-
-- Create a second Vercel project pointing at `website/studio`
-- Attach it to `studio.zenovee.com` (same root domain; no need to buy another)
-
-
