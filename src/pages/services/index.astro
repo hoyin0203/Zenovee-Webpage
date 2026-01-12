@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Services" description="Zenovee services: websites, web apps, Shopify development, and integrations.">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="reveal" data-reveal>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Services</h1>
+      <p class="mt-4 max-w-2xl text-white/70">
+        Build, launch, and iterate with a small senior team. We specialise in fast, modern websites and Shopify-centric product work.
+      </p>
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/contact">Request a quote</a>
+        <a class="btn btn-secondary" href="/pricing">Pricing overview</a>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      <a class="card reveal block p-6 hover:bg-white/[0.05]" data-reveal href="/services/website-development">
+        <div class="text-base font-semibold">Website development</div>
+        <p class="mt-2 text-sm text-white/65">Astro/Next websites with great UX, SEO, and performance.</p>
+        <img class="mt-4 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/services/website.png" alt="" loading="lazy" />
+      </a>
+      <a class="card reveal block p-6 hover:bg-white/[0.05]" data-reveal href="/services/webapp-development">
+        <div class="text-base font-semibold">Web app development</div>
+        <p class="mt-2 text-sm text-white/65">Dashboards, portals, internal tools, and integrations.</p>
+        <img class="mt-4 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/services/webapp.png" alt="" loading="lazy" />
+      </a>
+      <a class="card reveal block p-6 hover:bg-white/[0.05]" data-reveal href="/services/shopify-development">
+        <div class="text-base font-semibold">Shopify development</div>
+        <p class="mt-2 text-sm text-white/65">Themes, app extensions, automation, and Shopify integrations.</p>
+        <img class="mt-4 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/services/shopify.png" alt="" loading="lazy" />
+      </a>
+    </div>
+
+    <div class="mt-10 card reveal p-8 md:p-10" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">How we work</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">Discovery</div>
+          <div class="mt-1 text-sm text-white/65">Scope, goals, risks, timeline.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">Build</div>
+          <div class="mt-1 text-sm text-white/65">Fast iterations with weekly checkpoints.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">Launch</div>
+          <div class="mt-1 text-sm text-white/65">Deployment, analytics, QA, handover.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">Support</div>
+          <div class="mt-1 text-sm text-white/65">Fixes, improvements, new features.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

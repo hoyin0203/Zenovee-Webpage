@@ -1,0 +1,14 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="90" y="120" width="1020" height="480" rx="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="120" y="170" width="220" height="400" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="370" y="170" width="710" height="190" rx="22" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.22)"/>
+  <rect x="370" y="380" width="350" height="190" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="730" y="380" width="350" height="190" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="150" y="210" width="160" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="150" y="238" width="120" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
+  <rect x="150" y="276" width="160" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
+  <rect x="150" y="304" width="120" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
+  <text x="120" y="610" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="14">Dashboards & portals</text>
+</svg>
+

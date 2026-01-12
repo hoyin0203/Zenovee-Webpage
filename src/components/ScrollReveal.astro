@@ -1,0 +1,47 @@
+---
+/**
+ * Adds `in-view` class to elements with `[data-reveal]`.
+ * Use by adding `data-reveal` to any container/section.
+ */
+---
+
+<script is:inline>
+  (() => {
+    const forceMotion = document.documentElement.dataset.motion === "on";
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const disableMotion = Boolean(reducedMotion && !forceMotion);
+
+    const init = () => {
+      const elements = document.querySelectorAll("[data-reveal], .reveal");
+      if (elements.length === 0) return;
+
+      if (disableMotion) {
+        elements.forEach((el) => el.classList.add("in-view"));
+        return;
+      }
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in-view");
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: "0px 0px -10% 0px", threshold: 0.15 },
+      );
+      for (const el of elements) io.observe(el);
+    };
+
+    // Avoid adding multiple global listeners when navigating with ClientRouter
+    if (!window.__zenoveeRevealBound) {
+      window.__zenoveeRevealBound = true;
+      document.addEventListener("astro:page-load", init);
+      document.addEventListener("astro:after-swap", init);
+    }
+
+    init();
+  })();
+</script>
+

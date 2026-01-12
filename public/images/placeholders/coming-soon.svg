@@ -1,0 +1,10 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="22" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.10)"/>
+  <circle cx="600" cy="360" r="170" fill="rgba(34,211,238,0.10)"/>
+  <path d="M520 360h160" stroke="rgba(255,255,255,0.55)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M600 280v160" stroke="rgba(255,255,255,0.55)" stroke-width="10" stroke-linecap="round"/>
+  <text x="600" y="560" fill="rgba(255,255,255,0.80)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="26" text-anchor="middle">Coming soon</text>
+  <text x="600" y="592" fill="rgba(255,255,255,0.55)" font-family="ui-sans-serif, system-ui" font-weight="500" font-size="14" text-anchor="middle">More products under zenovee.com/products</text>
+</svg>
+

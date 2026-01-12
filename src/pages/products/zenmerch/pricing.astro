@@ -1,0 +1,205 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+type FeatureRow = {
+  key: string;
+  label: string;
+};
+
+type Plan = {
+  name: string;
+  price: string;
+  badge?: string;
+  highlighted?: boolean;
+  limits: { orders: string; storage: string };
+  included: Record<string, boolean>;
+};
+
+const featureRows: FeatureRow[] = [
+  { key: "unlimitedProducts", label: "Unlimited personalized products" },
+  { key: "templatesTargeting", label: "Reusable templates + targeting rules" },
+  { key: "assetLibrary", label: "Asset library (images, fonts, swatches)" },
+  { key: "livePreview", label: "Live preview + cart/checkout previews" },
+  { key: "orderExports", label: "Order exports + preview downloads" },
+  { key: "customCssJs", label: "Custom CSS & JS overrides" },
+  { key: "emailNotifications", label: "Email notifications" },
+  { key: "profanityFilter", label: "Profanity filter" },
+  { key: "webhookApi", label: "Webhook API" },
+];
+
+const plans: Plan[] = [
+  {
+    name: "Free",
+    price: "$0.00",
+    limits: { orders: "5 orders/mo", storage: "100.0 MB storage" },
+    included: {
+      unlimitedProducts: true,
+      templatesTargeting: true,
+      assetLibrary: true,
+      livePreview: true,
+      orderExports: false,
+      customCssJs: true,
+      emailNotifications: true,
+      profanityFilter: false,
+      webhookApi: false,
+    },
+  },
+  {
+    name: "Starter",
+    price: "$19.00",
+    limits: { orders: "100 orders/mo", storage: "1.00 GB storage" },
+    included: {
+      unlimitedProducts: true,
+      templatesTargeting: true,
+      assetLibrary: true,
+      livePreview: true,
+      orderExports: true,
+      customCssJs: true,
+      emailNotifications: true,
+      profanityFilter: true,
+      webhookApi: true,
+    },
+  },
+  {
+    name: "Pro",
+    price: "$29.00",
+    badge: "Popular",
+    highlighted: true,
+    limits: { orders: "200 orders/mo", storage: "10.0 GB storage" },
+    included: {
+      unlimitedProducts: true,
+      templatesTargeting: true,
+      assetLibrary: true,
+      livePreview: true,
+      orderExports: true,
+      customCssJs: true,
+      emailNotifications: true,
+      profanityFilter: true,
+      webhookApi: true,
+    },
+  },
+  {
+    name: "Enterprise",
+    price: "$49.00",
+    badge: "Best",
+    limits: { orders: "Unlimited orders", storage: "1.00 TB storage" },
+    included: {
+      unlimitedProducts: true,
+      templatesTargeting: true,
+      assetLibrary: true,
+      livePreview: true,
+      orderExports: true,
+      customCssJs: true,
+      emailNotifications: true,
+      profanityFilter: true,
+      webhookApi: true,
+    },
+  },
+];
+---
+
+<BaseLayout title="ZenMerch Pricing" description="ZenMerch pricing plans. Billing is handled through Shopify for Shopify apps.">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="reveal" data-reveal>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">ZenMerch pricing</h1>
+      <p class="mt-4 max-w-2xl text-white/70">
+        Simple, transparent plans. <span class="text-white/80">Billing is handled through Shopify</span> (Shopify app billing).
+      </p>
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/products/zenmerch/docs/getting-started">Getting started</a>
+        <a class="btn btn-secondary" href="/products/zenmerch/features">See features</a>
+        <a class="btn btn-secondary" href="/contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-4 lg:grid-cols-4">
+      {plans.map((p) => (
+        <div class={`card reveal p-6 ${p.highlighted ? "ring-1 ring-brand-500/35" : ""}`} data-reveal>
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-sm font-semibold text-white/85">{p.name}</div>
+            {p.badge && (
+              <span class={`rounded-full px-2 py-1 text-xs font-semibold ring-1 ${
+                p.highlighted
+                  ? "bg-brand-500/15 text-brand-200 ring-brand-500/25"
+                  : "bg-white/5 text-white/70 ring-white/10"
+              }`}>
+                {p.badge}
+              </span>
+            )}
+          </div>
+
+          <div class="mt-3 flex items-end gap-1">
+            <div class="text-4xl font-semibold tracking-tight">{p.price}</div>
+            <div class="pb-1 text-sm text-white/60">/mo</div>
+          </div>
+
+          <div class="mt-5 grid gap-2 text-sm text-white/75">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-lg bg-brand-500/15 text-brand-200 ring-1 ring-brand-500/25">✓</span>
+              <span>{p.limits.orders}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-lg bg-brand-500/15 text-brand-200 ring-1 ring-brand-500/25">✓</span>
+              <span>{p.limits.storage}</span>
+            </div>
+          </div>
+
+          <div class="my-5 h-px bg-white/10"></div>
+
+          <ul class="grid gap-2 text-sm">
+            {featureRows.map((row) => {
+              const ok = Boolean(p.included[row.key]);
+              return (
+                <li class={`flex items-start gap-2 ${ok ? "text-white/80" : "text-white/40"}`}>
+                  <span
+                    class={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-lg ring-1 ${
+                      ok
+                        ? "bg-brand-500/15 text-brand-200 ring-brand-500/25"
+                        : "bg-white/5 text-white/45 ring-white/10"
+                    }`}
+                    aria-hidden="true"
+                  >
+                    {ok ? "✓" : "×"}
+                  </span>
+                  <span class={ok ? "" : "line-through"}>{row.label}</span>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div class="mt-6">
+            <a class={`btn w-full ${p.highlighted ? "btn-primary" : "btn-secondary"}`} href="/contact">
+              Choose {p.name}
+            </a>
+            <p class="mt-3 text-xs text-white/45">Final checkout/billing occurs in Shopify.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-pad pb-20">
+    <div class="card reveal p-8 md:p-10" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">Billing FAQ</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <details class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <summary class="cursor-pointer text-sm font-semibold">How does billing work?</summary>
+          <p class="mt-2 text-sm text-white/65">
+            ZenMerch is a Shopify app, so charges are handled through Shopify billing.
+          </p>
+        </details>
+        <details class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <summary class="cursor-pointer text-sm font-semibold">Do you offer a trial?</summary>
+          <p class="mt-2 text-sm text-white/65">
+            Start on the Free plan, then upgrade when you need higher limits and automation features.
+          </p>
+        </details>
+      </div>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/products/zenmerch/docs">Docs</a>
+        <a class="btn btn-secondary" href="/products/zenmerch/faq">More FAQ</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

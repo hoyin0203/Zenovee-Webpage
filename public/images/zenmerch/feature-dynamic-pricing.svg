@@ -1,0 +1,28 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="22" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.10)"/>
+
+  <rect x="120" y="160" width="520" height="400" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="160" y="210" width="260" height="18" rx="9" fill="rgba(255,255,255,0.08)"/>
+  <rect x="160" y="246" width="220" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
+
+  <g opacity="0.95">
+    <rect x="160" y="300" width="440" height="54" rx="16" fill="rgba(255,255,255,0.06)"/>
+    <rect x="160" y="368" width="440" height="54" rx="16" fill="rgba(255,255,255,0.06)"/>
+    <rect x="160" y="436" width="440" height="54" rx="16" fill="rgba(34,211,238,0.16)" stroke="rgba(34,211,238,0.35)"/>
+  </g>
+
+  <rect x="720" y="180" width="360" height="360" rx="22" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.22)"/>
+  <path d="M780 460V260" stroke="rgba(255,255,255,0.30)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1020 460V260" stroke="rgba(255,255,255,0.30)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M780 460H1020" stroke="rgba(255,255,255,0.30)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M810 420L880 360L950 390L990 320" stroke="rgba(34,211,238,0.80)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="810" cy="420" r="7" fill="rgba(34,211,238,0.95)"/>
+  <circle cx="880" cy="360" r="7" fill="rgba(34,211,238,0.95)"/>
+  <circle cx="950" cy="390" r="7" fill="rgba(34,211,238,0.95)"/>
+  <circle cx="990" cy="320" r="7" fill="rgba(34,211,238,0.95)"/>
+
+  <text x="136" y="152" fill="rgba(255,255,255,0.85)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="16">Dynamic pricing</text>
+  <text x="736" y="212" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="14">Charge for upgrades</text>
+</svg>
+

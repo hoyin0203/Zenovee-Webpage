@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
+import Interactions from "../components/Interactions.astro";
+import Lightbox from "../components/Lightbox.astro";
+import { WebGLBackground } from "../components/WebGLBackground";
+import { ClientRouter } from "astro:transitions";
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props;
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? "Zenovee";
+const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
+const metaDescription =
+  description ??
+  "Zenovee builds products and services for Shopify—starting with ZenMerch, our product personalization app.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <ClientRouter />
+  </head>
+  <body class="relative overflow-x-hidden">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-grid-fade" transition:persist></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 opacity-60" transition:persist>
+      <WebGLBackground client:load className="h-full w-full" />
+    </div>
+    <div class="pointer-events-none fixed inset-0 -z-10 opacity-[0.08]" transition:persist>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+    </div>
+
+    <div transition:persist>
+      <Nav />
+    </div>
+
+    <main>
+      <slot />
+    </main>
+
+    <div transition:persist>
+      <Footer />
+    </div>
+
+    <ScrollReveal />
+    <Interactions />
+    <Lightbox />
+  </body>
+</html>
+

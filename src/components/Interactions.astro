@@ -1,0 +1,76 @@
+---
+/**
+ * Global micro-interactions (Folex-like feel):
+ * - subtle card tilt + highlight following cursor
+ * - button hover highlight
+ *
+ * Respects prefers-reduced-motion.
+ */
+---
+
+<script is:inline>
+  (() => {
+    const forceMotion = document.documentElement.dataset.motion === "on";
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const disableMotion = Boolean(reducedMotion && !forceMotion);
+    if (disableMotion) return;
+
+    const init = () => {
+      // Card tilt/highlight (idempotent)
+      document.querySelectorAll(".card").forEach((el) => {
+        if (el.dataset.zenCardBound === "1") return;
+        el.dataset.zenCardBound = "1";
+
+        let raf = 0;
+        const onMove = (ev) => {
+          const rect = el.getBoundingClientRect();
+          const x = (ev.clientX - rect.left) / rect.width;
+          const y = (ev.clientY - rect.top) / rect.height;
+
+          const ry = (x - 0.5) * 10;
+          const rx = (0.5 - y) * 10;
+
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            el.style.setProperty("--rx", rx.toFixed(2) + "deg");
+            el.style.setProperty("--ry", ry.toFixed(2) + "deg");
+            el.style.setProperty("--px", (x * 100).toFixed(2) + "%");
+            el.style.setProperty("--py", (y * 100).toFixed(2) + "%");
+            el.classList.add("tilt-active");
+          });
+        };
+
+        const onLeave = () => {
+          el.classList.remove("tilt-active");
+          el.style.removeProperty("--rx");
+          el.style.removeProperty("--ry");
+        };
+
+        el.addEventListener("pointermove", onMove);
+        el.addEventListener("pointerleave", onLeave);
+      });
+
+      // Button hover sheen (idempotent)
+      document.querySelectorAll(".btn").forEach((b) => {
+        if (b.dataset.zenBtnBound === "1") return;
+        b.dataset.zenBtnBound = "1";
+
+        b.addEventListener("pointermove", (ev) => {
+          const rect = b.getBoundingClientRect();
+          const x = (ev.clientX - rect.left) / rect.width;
+          const y = (ev.clientY - rect.top) / rect.height;
+          b.style.setProperty("--px", (x * 100).toFixed(2) + "%");
+          b.style.setProperty("--py", (y * 100).toFixed(2) + "%");
+        });
+      });
+    };
+
+    if (!window.__zenoveeInteractionsBound) {
+      window.__zenoveeInteractionsBound = true;
+      document.addEventListener("astro:page-load", init);
+      document.addEventListener("astro:after-swap", init);
+    }
+    init();
+  })();
+</script>
+

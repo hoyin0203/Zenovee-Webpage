@@ -1,0 +1,102 @@
+---
+/**
+ * Global image lightbox.
+ * Usage: add `data-lightbox-src="/path/to.png"` to any clickable element.
+ */
+---
+
+<dialog
+  id="zenLightbox"
+  class="fixed inset-0 m-auto max-h-[92vh] w-[min(1100px,92vw)] rounded-2xl border border-white/10 bg-zinc-950/95 p-0 text-white shadow-glow backdrop:bg-black/70"
+  transition:persist
+>
+  <div class="flex items-center justify-between border-b border-white/10 px-4 py-3">
+    <div class="text-sm font-semibold text-white/85">Preview</div>
+    <div class="flex items-center gap-2">
+      <a
+        id="zenLightboxOpen"
+        class="btn btn-secondary px-3 py-1.5 text-xs"
+        href="#"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Open full
+      </a>
+      <button id="zenLightboxClose" class="btn btn-secondary px-3 py-1.5 text-xs" type="button">
+        Close
+      </button>
+    </div>
+  </div>
+  <div class="p-4">
+    <img
+      id="zenLightboxImg"
+      class="h-auto w-full rounded-xl border border-white/10 bg-black/30"
+      alt=""
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+</dialog>
+
+<script is:inline>
+  (() => {
+    const getEls = () => {
+      const dialog = document.getElementById("zenLightbox");
+      const img = document.getElementById("zenLightboxImg");
+      const openFull = document.getElementById("zenLightboxOpen");
+      const closeBtn = document.getElementById("zenLightboxClose");
+      if (!dialog || !img || !openFull || !closeBtn) return null;
+      return { dialog, img, openFull, closeBtn };
+    };
+
+    const open = (src, alt = "") => {
+      const els = getEls();
+      if (!els) return;
+      const { dialog, img, openFull } = els;
+
+      // ClientRouter swaps can temporarily detach nodes; guard showModal
+      if (!dialog.isConnected) return;
+
+      img.src = src;
+      img.alt = alt;
+      openFull.href = src;
+      if (!dialog.open) dialog.showModal();
+    };
+
+    const bind = () => {
+      const els = getEls();
+      if (!els) return;
+      const { dialog, closeBtn } = els;
+
+      if (dialog.dataset.bound === "1") return;
+      dialog.dataset.bound = "1";
+
+      closeBtn.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (e) => {
+        // click backdrop closes (only when clicking the dialog element itself)
+        if (e.target === dialog) dialog.close();
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && dialog.open) dialog.close();
+      });
+    };
+
+    if (!window.__zenoveeLightboxBound) {
+      window.__zenoveeLightboxBound = true;
+      document.addEventListener("astro:page-load", bind);
+      document.addEventListener("astro:after-swap", bind);
+      document.addEventListener("click", (e) => {
+        const t = e.target?.closest?.("[data-lightbox-src]");
+        if (!t) return;
+        e.preventDefault();
+        const src = t.getAttribute("data-lightbox-src");
+        if (!src) return;
+        const alt = t.getAttribute("data-lightbox-alt") || "";
+        open(src, alt);
+      });
+    }
+
+    bind();
+  })();
+</script>
+

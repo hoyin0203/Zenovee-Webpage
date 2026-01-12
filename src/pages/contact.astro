@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.com";
+const sent = Astro.url.searchParams.get("sent") === "1";
+---
+
+<BaseLayout title="Contact" description="Contact Zenovee: product questions, demos, support, and services inquiries.">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-5">
+        <div class="reveal" data-reveal>
+          <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Contact</h1>
+          <p class="mt-4 text-white/70">
+            Tell us what you’re building. We’ll respond with clear next steps.
+          </p>
+          <div class="mt-6 card p-6">
+            <div class="text-sm font-semibold">Support email</div>
+            <a class="mt-2 block text-sm text-brand-200 hover:text-brand-100" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            <div class="mt-5 text-sm font-semibold">Common links</div>
+            <div class="mt-2 grid gap-2 text-sm text-white/70">
+              <a class="hover:text-white" href="/products/zenmerch/docs">ZenMerch docs</a>
+              <a class="hover:text-white" href="/products/zenmerch/pricing">ZenMerch pricing</a>
+              <a class="hover:text-white" href="/legal/privacy-policy">Privacy policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="card reveal p-6 sm:p-8" data-reveal>
+          {sent && (
+            <div class="mb-5 rounded-xl border border-brand-500/25 bg-brand-500/10 p-4 text-sm text-brand-100">
+              Thanks—your message was sent. If you don’t hear back soon, email <a class="underline" href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+            </div>
+          )}
+          <form method="post" action="/api/contact" class="grid gap-4">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="grid gap-2 text-sm">
+                <span class="text-white/80">Name</span>
+                <input
+                  class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 outline-none ring-brand-500/30 focus:ring-2"
+                  name="name"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+              <label class="grid gap-2 text-sm">
+                <span class="text-white/80">Email</span>
+                <input
+                  class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 outline-none ring-brand-500/30 focus:ring-2"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="grid gap-2 text-sm">
+                <span class="text-white/80">Company (optional)</span>
+                <input class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 outline-none ring-brand-500/30 focus:ring-2" name="company" />
+              </label>
+              <label class="grid gap-2 text-sm">
+                <span class="text-white/80">Topic</span>
+                <select class="zen-select rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-white/90 outline-none ring-brand-500/30 focus:ring-2" name="topic">
+                  <option value="zenmerch-demo">ZenMerch demo</option>
+                  <option value="zenmerch-support">ZenMerch support</option>
+                  <option value="services">Services inquiry</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="grid gap-2 text-sm">
+              <span class="text-white/80">Message</span>
+              <textarea
+                class="min-h-36 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 outline-none ring-brand-500/30 focus:ring-2"
+                name="message"
+                required
+              ></textarea>
+            </label>
+
+            <!-- honeypot -->
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+            <button class="btn btn-primary w-full sm:w-auto" type="submit">Send message</button>
+            <p class="text-xs text-white/50">
+              By submitting, you agree to our <a class="text-white/70 hover:text-white" href="/legal/privacy-policy">privacy policy</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

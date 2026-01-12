@@ -1,0 +1,83 @@
+---
+import ZenmerchDocsLayout from "../../../../components/ZenmerchDocsLayout.astro";
+import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.com";
+---
+
+<ZenmerchDocsLayout
+  title="ZenMerch Getting Started"
+  description="Install ZenMerch, enable OS 2.0 theme integration, create your first template, apply targeting, and test on storefront."
+>
+  <article class="prose prose-invert max-w-none">
+    <h1>Getting started</h1>
+    <p>
+      ZenMerch is a Shopify product personalization app built for a fast, user-friendly product page experience.
+      This guide gets you from install → live personalizer → first test order.
+    </p>
+
+    <h2 id="install">1) Install and open the app</h2>
+    <ol>
+      <li>Install <strong>ZenMerch</strong> from the Shopify App Store (or your install link).</li>
+      <li>In Shopify admin, open <strong>Apps → ZenMerch</strong>.</li>
+      <li>Confirm the app is connected and you can access settings.</li>
+    </ol>
+
+    <h2 id="theme">2) Enable theme integration (Online Store 2.0)</h2>
+    <ol>
+      <li>In ZenMerch, go to <strong>Settings → Theme integration</strong>.</li>
+      <li>Click <strong>Enable ZenMerch embed</strong> (opens Shopify Theme Editor).</li>
+      <li>Theme Editor → <strong>App embeds</strong> → enable ZenMerch → <strong>Save</strong>.</li>
+      <li>Back in ZenMerch, click <strong>Add personalizer block</strong>.</li>
+      <li>
+        Add the ZenMerch app block in <strong>Product information</strong>, usually <strong>above the buy buttons</strong>, then <strong>Save</strong>.
+      </li>
+    </ol>
+    <p>
+      Next: see the dedicated OS 2.0 guide: <a href="/products/zenmerch/docs/theme-integration">Theme integration</a>.
+    </p>
+
+    <h2 id="template">3) Create your first template (fields + layers)</h2>
+    <ol>
+      <li>Go to <strong>Templates → New template</strong>.</li>
+      <li>Add fields (text/options/uploads, etc.).</li>
+      <li>In <strong>Layers</strong>, add visual layers and link them to your fields.</li>
+      <li><strong>Save</strong> the template.</li>
+    </ol>
+
+    <h2 id="apply">4) Apply to products (targeting)</h2>
+    <p>Choose one method:</p>
+    <ul>
+      <li><strong>Products</strong>: assign the template to selected products.</li>
+      <li><strong>Rules</strong>: assign automatically via tags/title/vendor/type.</li>
+    </ul>
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Admin-Products.png"
+      alt="ZenMerch admin products view"
+      caption="Tip: use targeting rules when you manage many products."
+      aspectClass="aspect-[16/9]"
+    />
+
+    <h2 id="test">5) Test on storefront</h2>
+    <ol>
+      <li>Open a targeted product page.</li>
+      <li>Confirm live preview updates instantly.</li>
+      <li>Confirm validation/profanity filtering behaves as expected (if enabled).</li>
+      <li>Test uploads (if used): preview renders correctly and limits behave as expected.</li>
+      <li>Add to cart and place a test order.</li>
+    </ol>
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Frontend-PerosnalizedProduct.png"
+      alt="ZenMerch storefront personalized product experience"
+      caption="Storefront: customers personalize directly on the product page with live preview."
+      aspectClass="aspect-[16/9]"
+    />
+
+    <h2 id="support">Support</h2>
+    <p>
+      Use the <a href="/contact">contact form</a> or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+    </p>
+  </article>
+</ZenmerchDocsLayout>
+

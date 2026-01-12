@@ -1,0 +1,52 @@
+---
+import ZenmerchDocsLayout from "../../../../components/ZenmerchDocsLayout.astro";
+import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
+---
+
+<ZenmerchDocsLayout
+  title="ZenMerch Webhooks & CSV Export"
+  description="Send personalization payloads via webhooks and export CSV-friendly data for production workflows."
+>
+  <article class="prose prose-invert max-w-none">
+    <h1>Webhooks + CSV export</h1>
+    <p>
+      ZenMerch is designed to be operations-ready. If you run fulfillment workflows (POD, made-to-order, batching), webhooks and exports help you
+      get personalization data to the right place.
+    </p>
+
+    <h2 id="webhooks">Webhooks</h2>
+    <ul>
+      <li>Send order + personalization payloads to your system automatically.</li>
+      <li>Test payload delivery from Settings (recommended before going live).</li>
+      <li>Track success/failure and HTTP status for debugging.</li>
+    </ul>
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Settings-Webhook.png"
+      alt="ZenMerch webhook settings"
+      caption="Webhook settings: configure your URL, send test payloads, and verify delivery."
+      aspectClass="aspect-[16/9]"
+    />
+
+    <h2 id="exports">CSV export</h2>
+    <ul>
+      <li>Export CSV-friendly rows for production teams or third-party tools.</li>
+      <li>Useful for batching and print/production workflows.</li>
+    </ul>
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Orders-ViewPersonalization.png"
+      alt="ZenMerch orders view showing personalization details"
+      caption="Orders view: pull personalization data for production, fulfillment, and QA."
+      aspectClass="aspect-[16/9]"
+    />
+
+    <h2 id="tips">Operational tips</h2>
+    <ul>
+      <li>Keep template names consistent so exported data is easy to interpret.</li>
+      <li>Use validation and required fields to reduce production errors.</li>
+      <li>Run a full test order flow before enabling production automations.</li>
+    </ul>
+  </article>
+</ZenmerchDocsLayout>
+

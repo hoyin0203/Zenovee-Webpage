@@ -1,0 +1,25 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="22" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.10)"/>
+
+  <rect x="120" y="120" width="420" height="480" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="160" y="170" width="340" height="54" rx="16" fill="rgba(255,255,255,0.06)"/>
+  <rect x="160" y="242" width="340" height="54" rx="16" fill="rgba(34,211,238,0.16)" stroke="rgba(34,211,238,0.35)"/>
+  <rect x="160" y="314" width="340" height="54" rx="16" fill="rgba(255,255,255,0.06)"/>
+  <rect x="160" y="386" width="260" height="54" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-dasharray="8 8"/>
+
+  <g opacity="0.9">
+    <path d="M560 270h120" stroke="rgba(34,211,238,0.50)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M650 270l30-18v36l-30-18z" fill="rgba(34,211,238,0.50)"/>
+  </g>
+
+  <rect x="700" y="160" width="380" height="420" rx="22" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.22)"/>
+  <rect x="740" y="210" width="300" height="40" rx="14" fill="rgba(255,255,255,0.06)"/>
+  <rect x="740" y="268" width="240" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="740" y="296" width="280" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="740" y="348" width="220" height="44" rx="14" fill="rgba(34,211,238,0.18)" stroke="rgba(34,211,238,0.35)"/>
+
+  <text x="136" y="152" fill="rgba(255,255,255,0.85)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="16">Conditional logic</text>
+  <text x="716" y="192" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="14">Show the right fields</text>
+</svg>
+

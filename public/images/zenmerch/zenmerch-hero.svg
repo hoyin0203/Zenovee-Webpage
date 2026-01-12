@@ -1,0 +1,42 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#22D3EE" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#0E7490" stop-opacity="0.10"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#06B6D4" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="24" y="24" width="1152" height="672" rx="22" fill="url(#g1)" stroke="rgba(255,255,255,0.10)"/>
+  <g opacity="0.85">
+    <rect x="72" y="82" width="420" height="34" rx="10" fill="rgba(255,255,255,0.06)"/>
+    <rect x="72" y="138" width="520" height="18" rx="9" fill="rgba(255,255,255,0.05)"/>
+    <rect x="72" y="168" width="460" height="18" rx="9" fill="rgba(255,255,255,0.05)"/>
+
+    <rect x="72" y="230" width="360" height="54" rx="16" fill="rgba(34,211,238,0.16)" stroke="rgba(34,211,238,0.35)"/>
+    <rect x="448" y="230" width="200" height="54" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+  </g>
+
+  <g>
+    <rect x="700" y="110" width="420" height="500" rx="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+    <rect x="742" y="154" width="336" height="184" rx="18" fill="url(#g2)" stroke="rgba(255,255,255,0.10)"/>
+    <rect x="742" y="366" width="336" height="36" rx="12" fill="rgba(255,255,255,0.05)"/>
+    <rect x="742" y="414" width="260" height="14" rx="7" fill="rgba(255,255,255,0.05)"/>
+    <rect x="742" y="442" width="300" height="14" rx="7" fill="rgba(255,255,255,0.05)"/>
+    <rect x="742" y="490" width="150" height="44" rx="14" fill="rgba(34,211,238,0.18)" stroke="rgba(34,211,238,0.35)"/>
+    <rect x="906" y="490" width="172" height="44" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+  </g>
+
+  <g opacity="0.6">
+    <circle cx="260" cy="520" r="90" fill="rgba(34,211,238,0.12)"/>
+    <circle cx="970" cy="620" r="120" fill="rgba(14,116,144,0.14)"/>
+  </g>
+
+  <text x="86" y="106" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-size="14">ZenMerch · Product Personalisation</text>
+  <text x="86" y="262" fill="rgba(255,255,255,0.85)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="13">Preview</text>
+  <text x="468" y="262" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="13">Pricing</text>
+</svg>
+

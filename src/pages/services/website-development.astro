@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Website development" description="Fast, modern, SEO-friendly websites built with Astro/Next and shipped on Vercel.">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-7">
+        <div class="reveal" data-reveal>
+          <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Website development</h1>
+          <p class="mt-4 max-w-2xl text-white/70">
+            High-performing marketing sites with clean UI, strong SEO fundamentals, and conversion-focused structure.
+          </p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a class="btn btn-primary" href="/contact">Request quote</a>
+            <a class="btn btn-secondary" href="/services">All services</a>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="card reveal p-6" data-reveal>
+          <div class="text-base font-semibold">Typical deliverables</div>
+          <ul class="mt-4 grid gap-2 text-sm text-white/70">
+            <li>Modern UI + responsive layouts</li>
+            <li>Performance and SEO basics</li>
+            <li>Analytics and conversion tracking</li>
+            <li>CMS integration (Sanity)</li>
+          </ul>
+          <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/services/website.png" alt="" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

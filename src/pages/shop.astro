@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const shopUrl = import.meta.env.PUBLIC_ZENCRAFT_SHOP_URL;
+const ctaHref = shopUrl || "/contact";
+const ctaLabel = shopUrl ? "Shop now!" : "Request shop link";
+---
+
+<BaseLayout title="Shop" description="Shop ZenCraft Gifts — personalized crafting products and gift sets.">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-7">
+        <div class="reveal" data-reveal>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
+            ZenCraft Gifts · Shopify store
+          </p>
+          <h1 class="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+            Personalized crafting products and gift sets.
+          </h1>
+          <p class="mt-4 max-w-2xl text-white/70">
+            A separate Shopify storefront focused on ready-to-buy personalized items. Use this page as your main website “bridge” to the store.
+          </p>
+
+          <div class="mt-7">
+            <a
+              class="btn btn-primary"
+              href={ctaHref}
+              target={shopUrl ? "_blank" : undefined}
+              rel={shopUrl ? "noreferrer" : undefined}
+            >
+              {ctaLabel}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="card reveal overflow-hidden p-5" data-reveal>
+          <img class="w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/zencraft/zencraft-hero.png" alt="ZenCraft Gifts storefront preview" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

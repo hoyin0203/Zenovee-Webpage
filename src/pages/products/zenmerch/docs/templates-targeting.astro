@@ -1,0 +1,64 @@
+---
+import ZenmerchDocsLayout from "../../../../components/ZenmerchDocsLayout.astro";
+import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
+---
+
+<ZenmerchDocsLayout
+  title="ZenMerch Templates & Targeting"
+  description="Create templates once and apply them across products using targeting rules (tags/title/vendor/type)."
+>
+  <article class="prose prose-invert max-w-none">
+    <h1>Templates + targeting</h1>
+    <p>
+      Templates are the fastest way to scale ZenMerch across many products. Build a personalizer once, then apply it automatically via rules.
+    </p>
+
+    <h2 id="concepts">Key concepts: fields vs layers</h2>
+    <ul>
+      <li><strong>Fields</strong>: what the customer enters (text, options, uploads).</li>
+      <li><strong>Layers</strong>: what appears in the preview (text layers, image frames, backgrounds).</li>
+    </ul>
+    <p>
+      For accurate rendering, each field must be linked to the correct layer (e.g. text field → text layer, upload field → image frame).
+    </p>
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Personalizer-input-fields.png"
+      alt="ZenMerch personalizer input fields"
+      caption="Fields: text, options, and uploads that buyers interact with."
+      aspectClass="aspect-[16/9]"
+    />
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Personalizer-Layers.png"
+      alt="ZenMerch personalizer layers"
+      caption="Layers: the visual elements that render in the live preview."
+      aspectClass="aspect-[16/9]"
+    />
+
+    <h2 id="build">Build a template</h2>
+    <ol>
+      <li>Go to <strong>Templates → New template</strong>.</li>
+      <li>Add your fields (text, selects, color/pattern, upload).</li>
+      <li>Create layers and link each layer to the correct field.</li>
+      <li>Save and name the template clearly (e.g. “Engraving – Name + Message”).</li>
+    </ol>
+
+    <h2 id="targeting">Apply via targeting rules</h2>
+    <p>Targeting rules can apply templates automatically based on:</p>
+    <ul>
+      <li>Product <strong>tags</strong></li>
+      <li>Product <strong>title</strong> match</li>
+      <li><strong>Vendor</strong></li>
+      <li>Product <strong>type</strong></li>
+    </ul>
+
+    <ScreenshotFigure
+      src="/images/zenmerch/screenshots/Admin-Products.png"
+      alt="ZenMerch admin products targeting"
+      caption="Scale tip: rule-based targeting reduces manual product-by-product assignment."
+      aspectClass="aspect-[16/9]"
+    />
+  </article>
+</ZenmerchDocsLayout>
+

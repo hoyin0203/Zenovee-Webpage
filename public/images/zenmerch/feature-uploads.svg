@@ -1,0 +1,23 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="22" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.10)"/>
+
+  <rect x="140" y="150" width="520" height="420" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="190" y="210" width="420" height="260" rx="18" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.22)"/>
+  <path d="M400 350v-70" stroke="rgba(255,255,255,0.75)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M400 280l-26 26" stroke="rgba(255,255,255,0.75)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M400 280l26 26" stroke="rgba(255,255,255,0.75)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M320 380h160" stroke="rgba(255,255,255,0.35)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="190" y="494" width="180" height="44" rx="14" fill="rgba(34,211,238,0.18)" stroke="rgba(34,211,238,0.35)"/>
+
+  <rect x="720" y="190" width="340" height="340" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="760" y="240" width="260" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="760" y="270" width="220" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="760" y="320" width="160" height="44" rx="14" fill="rgba(34,211,238,0.16)" stroke="rgba(34,211,238,0.30)"/>
+  <rect x="760" y="380" width="260" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="760" y="410" width="200" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+
+  <text x="156" y="142" fill="rgba(255,255,255,0.85)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="16">Uploads & assets</text>
+  <text x="736" y="222" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="14">Fulfilment-friendly output</text>
+</svg>
+

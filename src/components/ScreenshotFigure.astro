@@ -1,0 +1,39 @@
+---
+type Props = {
+  src: string;
+  alt: string;
+  caption?: string;
+  /** "contain" keeps full UI visible, "cover" crops for marketing hero tiles */
+  fit?: "contain" | "cover";
+  /** Tailwind aspect class like "aspect-video" or "aspect-[16/10]" */
+  aspectClass?: string;
+};
+
+const { src, alt, caption, fit = "contain", aspectClass = "aspect-[16/10]" } = Astro.props as Props;
+---
+
+<figure class="not-prose">
+  <div class="card overflow-hidden">
+    <button
+      type="button"
+      class={`group relative block w-full ${aspectClass} bg-black/30`}
+      data-lightbox-src={src}
+      data-lightbox-alt={alt}
+      aria-label="Open screenshot"
+    >
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent"></div>
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        class={`h-full w-full ${fit === "cover" ? "object-cover" : "object-contain"} p-3 sm:p-4`}
+      />
+      <div class="pointer-events-none absolute right-3 top-3 rounded-full border border-white/10 bg-zinc-950/70 px-2 py-1 text-[11px] text-white/75 opacity-0 transition group-hover:opacity-100">
+        Click to enlarge
+      </div>
+    </button>
+  </div>
+  {caption && <figcaption class="mt-2 text-xs text-white/55">{caption}</figcaption>}
+</figure>
+

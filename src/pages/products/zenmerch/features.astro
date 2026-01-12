@@ -1,0 +1,207 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { groq, sanityClient } from "../../../lib/sanity";
+import ScreenshotFigure from "../../../components/ScreenshotFigure.astro";
+
+const fallbackFeatures = [
+  {
+    title: "Unlimited product customization (Personalizer Builder)",
+    desc: "Create a fast, user-friendly personalization experience with flexible input types—then connect each input to the correct visual layer in the preview.",
+    img: "/images/zenmerch/screenshots/Personalizer-Canvas.png",
+    bullets: [
+      "Text inputs, options/selects, colors/patterns, image uploads",
+      "Organize fields and layers so preview renders accurately",
+      "Built for made-to-order and POD workflows",
+    ],
+  },
+  {
+    title: "Live preview + validation + profanity filtering",
+    desc: "Reduce production errors and increase conversion by showing changes instantly, enforcing input rules, and protecting your brand with profanity controls.",
+    img: "/images/zenmerch/screenshots/live-preview-and-profanity-filter.png",
+    bullets: ["Instant preview updates as buyers type/select/upload", "Required fields + character limits + guardrails", "Profanity filter (block or warn)"],
+  },
+  {
+    title: "Templates + targeting rules",
+    desc: "Build once, reuse everywhere. Save personalization setups as templates and apply them automatically across your catalog using rules.",
+    img: "/images/zenmerch/screenshots/Admin-Templates.png",
+    bullets: ["Reusable template library", "Target by tags, title, vendor, product type", "Ideal for stores managing many products"],
+  },
+  {
+    title: "Webhooks + CSV export (operations-ready)",
+    desc: "ZenMerch is designed for fulfillment workflows. Send personalization payloads via webhooks and export CSV-friendly data for batching and production.",
+    img: "/images/zenmerch/screenshots/Settings-Webhook.png",
+    bullets: ["Webhook delivery to your systems", "Test payloads + delivery feedback", "CSV export for production and third-party tools"],
+  },
+  {
+    title: "Modern theme integration (Online Store 2.0)",
+    desc: "Install cleanly without risky theme edits using Shopify’s supported extension architecture.",
+    img: "/images/zenmerch/screenshots/Admin-Settings-ThemeIntegration.png",
+    bullets: ["Theme app block for product page personalizer UI", "App embed for global storefront behavior (when needed)", "Designed for OS 2.0 compatibility"],
+  },
+];
+
+type CmsFeature = {
+  title: string;
+  desc?: string;
+  bullets?: string[];
+  imageUrl?: string;
+};
+
+let cmsFeatures: CmsFeature[] | null = null;
+if (sanityClient) {
+  cmsFeatures = await sanityClient.fetch(
+    groq`*[_type=="product" && slug.current=="zenmerch"][0]{features[]{title, desc, bullets, "imageUrl": image.asset->url}}.features`,
+  );
+}
+
+const features =
+  cmsFeatures && Array.isArray(cmsFeatures) && cmsFeatures.length > 0
+    ? cmsFeatures.map((f, idx) => ({
+        title: f.title,
+        desc: f.desc ?? "",
+        img:
+          f.imageUrl ||
+          // fallback visuals if CMS image isn’t set
+          fallbackFeatures[Math.min(idx, fallbackFeatures.length - 1)]?.img,
+        bullets: Array.isArray(f.bullets) ? f.bullets : [],
+      }))
+    : fallbackFeatures;
+---
+
+<BaseLayout
+  title="ZenMerch Features"
+  description="ZenMerch is a Shopify product personalization app: builder, live preview + validation + profanity filtering, templates + targeting rules, webhooks + CSV export, and OS2 theme integration."
+>
+  <section class="container-pad py-14 sm:py-20">
+    <div class="reveal" data-reveal>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">ZenMerch features</h1>
+      <p class="mt-4 max-w-2xl text-white/70">
+        Personalization made <span class="text-white">powerful</span>, <span class="text-white">simple</span>, and <span class="text-white">instant</span>.
+        Built to be clear for merchants, customers, and Shopify reviewers.
+      </p>
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/products/zenmerch/demo">See demo</a>
+        <a class="btn btn-secondary" href="/products/zenmerch/pricing">Pricing</a>
+        <a class="btn btn-secondary" href="/products/zenmerch/docs">Docs</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-20">
+    <div class="reveal mb-10 grid gap-4 md:grid-cols-3" data-reveal>
+      <div class="card p-6">
+        <div class="text-sm font-semibold">Who it’s for</div>
+        <p class="mt-2 text-sm text-white/65">
+          Print-on-demand and made-to-order brands that need accurate buyer inputs and production-ready order data.
+        </p>
+      </div>
+      <div class="card p-6">
+        <div class="text-sm font-semibold">Built for OS 2.0</div>
+        <p class="mt-2 text-sm text-white/65">
+          Theme app blocks + app embeds for clean installation without risky theme edits.
+        </p>
+      </div>
+      <div class="card p-6">
+        <div class="text-sm font-semibold">Scale across many products</div>
+        <p class="mt-2 text-sm text-white/65">
+            Templates and targeting rules help teams manage personalization at catalog scale.
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal mb-10 grid gap-4 md:grid-cols-3" data-reveal>
+      <ScreenshotFigure
+        src="/images/zenmerch/screenshots/Frontend-PerosnalizedProduct.png"
+        alt="ZenMerch storefront personalized product"
+        caption="Storefront: personalized product experience"
+        aspectClass="aspect-[16/9]"
+        fit="cover"
+      />
+      <ScreenshotFigure
+        src="/images/zenmerch/screenshots/Admin-Orders.png"
+        alt="ZenMerch admin orders list"
+        caption="Admin: orders list"
+        aspectClass="aspect-[16/9]"
+        fit="cover"
+      />
+      <ScreenshotFigure
+        src="/images/zenmerch/screenshots/Orders-ViewPersonalization.png"
+        alt="ZenMerch view personalization details"
+        caption="Admin: view personalization details"
+        aspectClass="aspect-[16/9]"
+        fit="cover"
+      />
+    </div>
+
+    <div class="grid gap-10">
+      {features.map((f, idx) => (
+        <div class="card reveal overflow-hidden" data-reveal>
+          <div class={`grid gap-0 lg:grid-cols-2 ${idx % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+            <div class="p-6 sm:p-8">
+              <h2 class="text-2xl font-semibold tracking-tight">{f.title}</h2>
+              <p class="mt-3 text-sm text-white/65">{f.desc}</p>
+              <ul class="mt-5 grid gap-2 text-sm text-white/70">
+                {f.bullets.map((b) => (
+                  <li class="flex gap-2">
+                    <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-300"></span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-6 flex gap-2">
+                <a class="btn btn-secondary" href="/contact">Talk to us</a>
+                <a class="btn btn-primary" href="/products/zenmerch">Overview</a>
+              </div>
+            </div>
+            <div class="border-t border-white/10 bg-white/[0.02] p-6 sm:p-8 lg:border-l lg:border-t-0">
+              <button
+                type="button"
+                class="group relative block w-full"
+                data-lightbox-src={f.img}
+                data-lightbox-alt={f.title}
+                aria-label="Open screenshot"
+              >
+                <img
+                  class="h-full w-full rounded-xl border border-white/10 bg-black/20 object-cover"
+                  src={f.img}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="pointer-events-none absolute right-3 top-3 rounded-full border border-white/10 bg-zinc-950/70 px-2 py-1 text-[11px] text-white/75 opacity-0 transition group-hover:opacity-100">
+                  Click to enlarge
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="card reveal mt-10 p-8 md:p-10" data-reveal>
+      <div class="grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Ready to install?</h2>
+          <p class="mt-3 text-sm text-white/65">
+            Follow the step-by-step guide: enable the theme embed, add the product page block, build a template, target products, and test on storefront.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a class="btn btn-primary" href="/products/zenmerch/docs/getting-started">Getting started</a>
+            <a class="btn btn-secondary" href="/products/zenmerch/docs">Docs hub</a>
+          </div>
+        </div>
+        <div class="grid gap-3">
+          <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/75">
+            <div class="font-semibold text-white">Theme placement tip</div>
+            <div class="mt-1">For best conversion, place the personalizer block above the buy buttons.</div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/75">
+            <div class="font-semibold text-white">Operations-ready</div>
+            <div class="mt-1">Use webhooks + CSV export to integrate with production and batching.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

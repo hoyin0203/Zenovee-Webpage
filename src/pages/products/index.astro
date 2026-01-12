@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Products" description="Explore Zenovee: ZenMerch (Shopify app) and ZenCraft Gifts (Shopify storefront).">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="reveal" data-reveal>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Our products</h1>
+      <p class="mt-4 max-w-2xl text-white/70">
+        Everything under one company hub. Marketing lives on <span class="text-white">zenovee.com</span>; app backends live on subdomains.
+      </p>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        <a class="card group block p-6 hover:bg-white/[0.05]" href="/products/zenmerch">
+          <div class="flex items-center justify-between">
+            <div class="text-lg font-semibold">ZenMerch</div>
+            <span class="rounded-full bg-brand-500/15 px-2 py-1 text-xs font-semibold text-brand-200 ring-1 ring-brand-500/25">App</span>
+          </div>
+          <p class="mt-2 text-sm text-white/65">
+            Shopify product personalization app with live preview, logic-based options, and dynamic pricing.
+          </p>
+          <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/zenmerch/zenmerch-hero.png" alt="" loading="lazy" />
+          <div class="mt-5 text-sm text-white/70 group-hover:text-white">Open ZenMerch →</div>
+        </a>
+
+        <div class="card p-6">
+          <div class="flex items-center justify-between">
+            <div class="text-lg font-semibold">ZenCraft Gifts</div>
+            <span class="rounded-full bg-white/5 px-2 py-1 text-xs font-semibold text-white/70 ring-1 ring-white/10">Shop</span>
+          </div>
+          <p class="mt-2 text-sm text-white/65">A Shopify storefront selling personalized crafting products and curated gift sets.</p>
+          <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/zencraft/zencraft-hero.png" alt="" loading="lazy" />
+          <div class="mt-5 flex gap-2">
+            <a class="btn btn-secondary w-full" href="/shop">Shop page</a>
+            <a class="btn btn-primary w-full" href={import.meta.env.PUBLIC_ZENCRAFT_SHOP_URL ?? "/shop"}>Visit shop →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

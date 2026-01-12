@@ -1,0 +1,12 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="22" fill="rgba(34,211,238,0.08)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="120" y="140" width="420" height="440" rx="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="620" y="170" width="460" height="170" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="620" y="360" width="460" height="220" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <path d="M330 230c55 0 100 45 100 100 0 48-34 88-78 98" stroke="rgba(255,255,255,0.55)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M330 230c-55 0-100 45-100 100 0 48 34 88 78 98" stroke="rgba(255,255,255,0.55)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="330" cy="330" r="52" fill="rgba(34,211,238,0.15)" stroke="rgba(34,211,238,0.35)" stroke-width="6"/>
+  <text x="620" y="150" fill="rgba(255,255,255,0.80)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="16">Print-on-demand workflow</text>
+</svg>
+

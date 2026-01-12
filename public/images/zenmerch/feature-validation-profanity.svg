@@ -1,0 +1,28 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="28" fill="#070A0F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="22" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.10)"/>
+
+  <rect x="120" y="150" width="520" height="420" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="150" y="192" fill="rgba(255,255,255,0.80)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="14">Live preview + validation</text>
+  <rect x="150" y="220" width="460" height="170" rx="18" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.22)"/>
+
+  <rect x="150" y="414" width="460" height="54" rx="16" fill="rgba(255,255,255,0.06)"/>
+  <text x="176" y="448" fill="rgba(255,255,255,0.70)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="12">Name (required)</text>
+  <rect x="150" y="482" width="460" height="54" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-dasharray="8 8"/>
+  <text x="176" y="516" fill="rgba(255,255,255,0.55)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="12">Message (max 20 chars)</text>
+
+  <rect x="720" y="150" width="360" height="420" rx="22" fill="rgba(34,211,238,0.06)" stroke="rgba(34,211,238,0.18)"/>
+  <text x="748" y="192" fill="rgba(255,255,255,0.80)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="14">Profanity filter</text>
+
+  <rect x="748" y="220" width="304" height="72" rx="18" fill="rgba(255,255,255,0.06)"/>
+  <text x="772" y="254" fill="rgba(255,255,255,0.70)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="12">Detected word: ****</text>
+  <rect x="748" y="306" width="304" height="48" rx="16" fill="rgba(239,68,68,0.10)" stroke="rgba(239,68,68,0.35)"/>
+  <text x="772" y="336" fill="rgba(255,255,255,0.75)" font-family="ui-sans-serif, system-ui" font-weight="700" font-size="12">Blocked / Warned</text>
+
+  <rect x="748" y="376" width="304" height="170" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="772" y="414" fill="rgba(255,255,255,0.65)" font-family="ui-sans-serif, system-ui" font-weight="600" font-size="12">Validation rules</text>
+  <rect x="772" y="438" width="256" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <rect x="772" y="466" width="226" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
+  <rect x="772" y="494" width="246" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
+</svg>
+

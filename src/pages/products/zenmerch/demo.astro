@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="ZenMerch Demo" description="See a quick ZenMerch demo and request a guided walk-through.">
+  <section class="container-pad py-14 sm:py-20">
+    <div class="reveal" data-reveal>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">ZenMerch demo</h1>
+      <p class="mt-4 max-w-2xl text-white/70">
+        A short visual overview. Replace the placeholder with a real demo video or a live store link when ready.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-8">
+        <div class="card reveal overflow-hidden" data-reveal>
+          <div class="aspect-video bg-black/30">
+            <div class="flex h-full items-center justify-center p-8 text-center">
+              <div>
+                <div class="text-sm font-semibold text-white/80">Demo video placeholder</div>
+                <p class="mt-2 text-sm text-white/60">Embed a YouTube/Vimeo video here, or link to a live demo store.</p>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-white/10 p-5 text-sm text-white/70">
+            Tip: Shopify reviewers love clear “how to install + how it works” content. Pair this demo with the docs page.
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4">
+        <div class="card reveal p-6" data-reveal>
+          <div class="text-base font-semibold">Want a guided demo?</div>
+          <p class="mt-2 text-sm text-white/65">We’ll walk through setup, theme integration, and fulfillment output.</p>
+          <div class="mt-5 grid gap-2">
+            <a class="btn btn-primary" href="/contact">Request a demo</a>
+            <a class="btn btn-secondary" href="/products/zenmerch/docs">Read docs</a>
+            <a class="btn btn-secondary" href="/products/zenmerch/features">Features</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
