@@ -55,7 +55,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div id="homeHeroMedia" class="hero-media relative mt-5 w-full">
             <img
               class="w-full rounded-xl border border-white/10 bg-white/[0.02]"
-              src="/images/zenmerch/zenmerch-hero.png"
+              src="/images/zenmerch/zenmerch-hero.jpg"
               alt="ZenMerch storefront personalized product"
               loading="lazy"
               decoding="async"
@@ -76,22 +76,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div>
           <h2 class="text-2xl font-semibold tracking-tight">Products</h2>
           <p class="mt-2 max-w-2xl text-sm text-white/65">
-            We’re starting with ZenMerch. More products will ship under the same zenovee.com domain.
+            ZenMerch is our flagship Shopify app. ZenCraft Gifts is our storefront—both under the Zenovee umbrella.
           </p>
         </div>
         <a class="hidden text-sm text-white/70 hover:text-white md:block" href="/products">View all →</a>
       </div>
 
       <div class="mt-8 grid gap-4 md:grid-cols-2">
-        <a class="card group block p-6 hover:bg-white/[0.05]" href="/products/zenmerch">
+        <div class="card p-6">
           <div class="flex items-center justify-between">
-            <div class="text-lg font-semibold">ZenMerch</div>
+            <div class="text-lg font-semibold">Get started with ZenMerch</div>
             <span class="rounded-full bg-brand-500/15 px-2 py-1 text-xs font-semibold text-brand-200 ring-1 ring-brand-500/25">App</span>
           </div>
-          <p class="mt-2 text-sm text-white/65">Shopify product personalization app with theme-extension support.</p>
-          <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/zenmerch/Zenmerch-product-hero.png" alt="" loading="lazy" />
-          <div class="mt-5 text-sm text-white/70 group-hover:text-white">Explore ZenMerch →</div>
-        </a>
+          <p class="mt-2 text-sm text-white/65">
+            Skip the repeat screenshot—use these shortcuts to explore features, docs, and pricing.
+          </p>
+          <div class="mt-5 grid gap-2">
+            <a class="btn btn-secondary w-full" href="/products/zenmerch/features">See features</a>
+            <a class="btn btn-secondary w-full" href="/products/zenmerch/docs/getting-started">Setup guide</a>
+            <a class="btn btn-primary w-full" href="/products/zenmerch/pricing">View pricing →</a>
+          </div>
+        </div>
 
         <div class="card p-6">
           <div class="flex items-center justify-between">
