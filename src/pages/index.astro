@@ -72,8 +72,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="container-pad pb-14 sm:pb-20">
     <div class="reveal" data-reveal>
-      <div class="card overflow-hidden border border-white/10 bg-white/[0.02] p-0 md:grid md:grid-cols-2">
-        <div class="p-8 md:p-10 lg:p-12">
+      <div class="card overflow-hidden border border-white/10 bg-white/[0.02] p-0">
+        <div class="relative w-full border-b border-white/10 bg-zinc-950/50">
+          <img
+            class="h-auto w-full object-cover opacity-90 transition hover:opacity-100"
+            src="/images/zencraft/zencraft-hero.png"
+            alt="ZenCraft Gifts shop preview"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-8 md:p-10">
           <div class="flex items-center justify-between">
             <h2 class="text-2xl font-semibold tracking-tight">ZenCraft Gifts</h2>
             <span class="rounded-full bg-white/5 px-2 py-1 text-xs font-semibold text-white/70 ring-1 ring-white/10">Shop</span>
@@ -87,14 +95,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               Visit shop →
             </a>
           </div>
-        </div>
-        <div class="relative min-h-[240px] border-t border-white/10 bg-zinc-950/50 md:border-l md:border-t-0">
-          <img
-            class="absolute inset-0 h-full w-full object-cover opacity-80 transition hover:opacity-100"
-            src="/images/zencraft/zencraft-hero.png"
-            alt="ZenCraft Gifts shop preview"
-            loading="lazy"
-          />
         </div>
       </div>
     </div>
