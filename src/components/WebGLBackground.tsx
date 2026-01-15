@@ -12,10 +12,6 @@ export function WebGLBackground({ className }: Props) {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const forceMotion = document.documentElement.dataset.motion === "on";
-    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    if (reducedMotion && !forceMotion) return;
-
     const renderer = new THREE.WebGLRenderer({
       canvas,
       antialias: true,

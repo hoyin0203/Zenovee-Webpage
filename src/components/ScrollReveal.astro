@@ -7,18 +7,9 @@
 
 <script is:inline>
   (() => {
-    const forceMotion = document.documentElement.dataset.motion === "on";
-    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    const disableMotion = Boolean(reducedMotion && !forceMotion);
-
     const init = () => {
       const elements = document.querySelectorAll("[data-reveal], .reveal");
       if (elements.length === 0) return;
-
-      if (disableMotion) {
-        elements.forEach((el) => el.classList.add("in-view"));
-        return;
-      }
 
       const io = new IntersectionObserver(
         (entries) => {

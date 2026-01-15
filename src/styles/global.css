@@ -184,21 +184,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html:not([data-motion="on"]) .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-  html:not([data-motion="on"]) {
-    scroll-behavior: auto;
-  }
-  html:not([data-motion="on"]) .orb {
-    animation: none !important;
-  }
-  html:not([data-motion="on"]) ::view-transition-old(root),
-  html:not([data-motion="on"]) ::view-transition-new(root) {
-    animation: none !important;
-  }
-}
+/* Note: animations are intentionally not disabled via prefers-reduced-motion,
+   per product requirement (always-on motion). */
 

@@ -229,32 +229,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html:not([data-motion="on"]) .hero-word {
-        opacity: 1;
-        transform: none;
-        filter: none;
-        animation: none;
-      }
-      html:not([data-motion="on"]) .hero-media {
-        transform: none !important;
-        transition: none !important;
-      }
-      html:not([data-motion="on"]) .hero-media::before {
-        opacity: 0 !important;
-      }
-      html:not([data-motion="on"]) .reveal.in-view .hero-media {
-        animation: none !important;
-      }
-    }
   </style>
 
   <script is:inline>
     (() => {
-      const forceMotion = document.documentElement.dataset.motion === "on";
-      const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-      if (reducedMotion && !forceMotion) return;
-
       const init = () => {
         const el = document.getElementById("homeHeroMedia");
         if (!el) return;

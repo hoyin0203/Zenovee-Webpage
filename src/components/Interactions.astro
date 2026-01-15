@@ -4,17 +4,12 @@
  * - subtle card tilt + highlight following cursor
  * - button hover highlight
  *
- * Respects prefers-reduced-motion.
+ * Note: intentionally does NOT disable motion via prefers-reduced-motion (always-on).
  */
 ---
 
 <script is:inline>
   (() => {
-    const forceMotion = document.documentElement.dataset.motion === "on";
-    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    const disableMotion = Boolean(reducedMotion && !forceMotion);
-    if (disableMotion) return;
-
     const init = () => {
       // Card tilt/highlight (idempotent)
       document.querySelectorAll(".card").forEach((el) => {
