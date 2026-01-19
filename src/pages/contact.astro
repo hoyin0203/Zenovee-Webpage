@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.com";
+const hqAddress = import.meta.env.PUBLIC_HQ_ADDRESS ?? "";
 const sent = Astro.url.searchParams.get("sent") === "1";
 ---
 
@@ -16,6 +17,28 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           <div class="mt-6 card p-6">
             <div class="text-sm font-semibold">Support email</div>
             <a class="mt-2 block text-sm text-brand-200 hover:text-brand-100" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+
+            {hqAddress && (
+              <div class="mt-5 border-t border-white/10 pt-5">
+                <div class="text-sm font-semibold">Headquarters</div>
+                <div class="mt-2 flex items-start gap-2 text-sm text-white/70">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                    ></path>
+                  </svg>
+                  <address class="not-italic leading-relaxed">{hqAddress}</address>
+                </div>
+              </div>
+            )}
+
             <div class="mt-5 text-sm font-semibold">Common links</div>
             <div class="mt-2 grid gap-2 text-sm text-white/70">
               <a class="hover:text-white" href="/products/zenmerch/docs">ZenMerch docs</a>
