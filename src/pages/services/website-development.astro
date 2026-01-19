@@ -7,13 +7,23 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
       <div class="lg:col-span-7">
         <div class="reveal" data-reveal>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
+            Marketing websites · SEO + performance · CMS-ready
+          </p>
           <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Website development</h1>
           <p class="mt-4 max-w-2xl text-white/70">
-            High-performing marketing sites with clean UI, strong SEO fundamentals, and conversion-focused structure.
+            High-performing marketing sites with clean UI, strong SEO fundamentals, and conversion-focused structure—built to load fast and scale with
+            your content.
           </p>
           <div class="mt-7 flex flex-col gap-3 sm:flex-row">
             <a class="btn btn-primary" href="/contact">Request quote</a>
             <a class="btn btn-secondary" href="/services">All services</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2 text-xs text-white/70">
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Astro / Next.js</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Tailwind</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Vercel</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Sanity (optional)</span>
           </div>
         </div>
       </div>
@@ -22,12 +32,244 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <div class="text-base font-semibold">Typical deliverables</div>
           <ul class="mt-4 grid gap-2 text-sm text-white/70">
             <li>Modern UI + responsive layouts</li>
-            <li>Performance and SEO basics</li>
-            <li>Analytics and conversion tracking</li>
-            <li>CMS integration (Sanity)</li>
+            <li>Fast page loads and clean Core Web Vitals</li>
+            <li>SEO fundamentals (metadata, sitemap, robots)</li>
+            <li>Analytics + conversion tracking (optional)</li>
+            <li>CMS integration (Sanity) + content modeling (optional)</li>
+            <li>Forms (Resend), spam protection, and deliverability setup</li>
           </ul>
           <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/services/website.png" alt="" loading="lazy" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="reveal" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">Built for conversion and maintainability</h2>
+      <p class="mt-2 max-w-2xl text-sm text-white/65">
+        A marketing site shouldn’t be a one-time launch. We build systems you can evolve—without slow pages, fragile code, or inconsistent styling.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="card p-6">
+          <div class="text-sm font-semibold">Design system + components</div>
+          <p class="mt-2 text-sm text-white/65">
+            A reusable set of sections and UI components so new pages stay consistent and fast to ship.
+          </p>
+        </div>
+        <div class="card p-6">
+          <div class="text-sm font-semibold">SEO + content structure</div>
+          <p class="mt-2 text-sm text-white/65">
+            Clear information architecture, strong internal linking, and metadata—so your pages can rank and convert.
+          </p>
+        </div>
+        <div class="card p-6">
+          <div class="text-sm font-semibold">Performance by default</div>
+          <p class="mt-2 text-sm text-white/65">
+            Optimized images, sane scripts, and modern build tooling—so visitors get instant interactions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="card reveal p-8 md:p-10" data-reveal>
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">What we deliver</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            Scope varies by project, but these are the most common outcomes teams want.
+          </p>
+        </div>
+        <a class="btn btn-secondary hidden sm:inline-flex" href="/services">Compare services</a>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Page templates you can reuse</div>
+          <div class="mt-2 text-sm text-white/65">
+            Home, product/feature pages, docs/knowledge base, blog/article layout, company pages, and legal pages.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">CMS (optional)</div>
+          <div class="mt-2 text-sm text-white/65">
+            Sanity Studio with structured content types, preview-friendly editing, and a scalable navigation model.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Lead capture that works</div>
+          <div class="mt-2 text-sm text-white/65">
+            Contact forms with deliverability best practices, spam protection, and clear success/error states.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Analytics (optional)</div>
+          <div class="mt-2 text-sm text-white/65">
+            Privacy-friendly tracking setup and event naming for the things that matter: demos, signups, and sales.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">SEO fundamentals</div>
+          <div class="mt-2 text-sm text-white/65">
+            OpenGraph, titles/descriptions, canonical URLs, sitemaps, robots, and clean headings.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Launch + handoff</div>
+          <div class="mt-2 text-sm text-white/65">
+            Vercel deployment, environment setup, and a short handoff doc so your team can keep moving.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/contact">Request quote</a>
+        <a class="btn btn-secondary" href="/pricing">Pricing overview</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="reveal" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">Our process</h2>
+      <p class="mt-2 max-w-2xl text-sm text-white/65">
+        Fast iterations with clear checkpoints, so you always know what’s shipping next.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-5">
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">1) Discovery</div>
+          <div class="mt-1 text-sm text-white/65">Goals, pages, audience, and success metrics.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">2) UX + content</div>
+          <div class="mt-1 text-sm text-white/65">Structure, copy help, and conversion flow.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">3) Build</div>
+          <div class="mt-1 text-sm text-white/65">Components, pages, CMS (optional), integrations.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">4) QA</div>
+          <div class="mt-1 text-sm text-white/65">Responsive checks, SEO, accessibility basics.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">5) Launch</div>
+          <div class="mt-1 text-sm text-white/65">Deploy, verify analytics, and handoff.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-7">
+        <div class="reveal" data-reveal>
+          <h2 class="text-2xl font-semibold tracking-tight">Timeline expectations</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            Exact timelines depend on scope and review speed, but most website projects land in one of these ranges.
+          </p>
+          <div class="mt-6 grid gap-3">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold">Landing page</div>
+                <div class="text-xs text-white/60">~ 3–7 days</div>
+              </div>
+              <div class="mt-2 text-sm text-white/65">
+                One focused page, strong hero + CTA, and a clean conversion funnel. Great for early launches.
+              </div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold">Marketing site</div>
+                <div class="text-xs text-white/60">~ 2–4 weeks</div>
+              </div>
+              <div class="mt-2 text-sm text-white/65">
+                Multi-page site: product pages, docs, legal, contact, and polished UX across desktop + mobile.
+              </div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold">CMS-powered content</div>
+                <div class="text-xs text-white/60">~ 3–6 weeks</div>
+              </div>
+              <div class="mt-2 text-sm text-white/65">
+                Sanity models, editor experience, content migration, and preview workflows for teams that publish often.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="card reveal p-6" data-reveal>
+          <div class="text-base font-semibold">What we need from you</div>
+          <ul class="mt-4 grid gap-2 text-sm text-white/70">
+            <li>Brand assets (logo, colors, fonts) and preferred references</li>
+            <li>Basic page list (must-have pages + priorities)</li>
+            <li>Draft copy (we can help tighten it)</li>
+            <li>Hosting/DNS access for launch (or we guide you)</li>
+          </ul>
+          <div class="mt-6 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/65">
+            Want a fast start? Send us your sitemap and 2–3 competitor sites you like. We’ll reply with a suggested structure and quote.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-20">
+    <div class="card reveal p-8 md:p-10" data-reveal>
+      <div class="grid gap-8 md:grid-cols-2 md:items-start">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">FAQ</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            Common questions about websites, CMS, SEO, and ongoing support.
+          </p>
+        </div>
+        <div class="grid gap-3">
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Can we edit the site ourselves?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              Yes. For simple sites, we can keep content in code with clear editing instructions. For frequent updates, we recommend Sanity so your
+              team can edit pages and docs without engineering help.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Do you help with SEO?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              We implement SEO fundamentals (structure, metadata, sitemaps, OpenGraph). If you need deeper keyword strategy or content planning,
+              we can coordinate with your SEO team or recommend partners.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Can you migrate content from our old site?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              Yes. We can migrate pages and posts, keep important URLs stable, and set up redirects so you don’t lose search traffic.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">What about hosting and deployments?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              We typically deploy on Vercel for fast global performance. We’ll set up environments, preview deployments, and guide your DNS cutover.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Do you provide ongoing support?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              Yes. After launch we can handle fixes, improvements, new pages, and performance work. If you prefer, we can also hand off with a clean
+              internal README and structured components.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/contact">Get a website quote</a>
+        <a class="btn btn-secondary" href="/services/shopify-development">Need Shopify work instead?</a>
       </div>
     </div>
   </section>
