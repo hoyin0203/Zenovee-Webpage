@@ -1,28 +1,141 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? "Zenovee LLC";
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.com";
 ---
 
 <BaseLayout title="Privacy policy" description="Zenovee privacy policy.">
   <section class="container-pad py-14 sm:py-20">
     <article class="prose prose-invert max-w-3xl reveal" data-reveal>
       <h1>Privacy policy</h1>
-      <p><em>Last updated: 2026-01-11</em></p>
+      <p><em>Last updated: 2026-01-19</em></p>
+
       <p>
-        This is a starter privacy policy for the Zenovee marketing website. Replace with your final legal text before production launch.
+        This Privacy Policy explains how <strong>{siteName}</strong> (“Zenovee,” “we,” “us,” or “our”) collects, uses, discloses, and protects
+        personal information when you visit our website (the “Site”) or contact us.
       </p>
-      <h2>What we collect</h2>
-      <ul>
-        <li>Contact form data (name, email, message, and optional company/topic)</li>
-        <li>Basic website analytics (if enabled)</li>
-      </ul>
-      <h2>How we use it</h2>
-      <ul>
-        <li>To respond to inquiries and provide support</li>
-        <li>To improve site content and product documentation</li>
-      </ul>
-      <h2>Contact</h2>
+
+      <h2>Scope</h2>
       <p>
-        If you have privacy questions, please <a href="/contact">contact us</a>.
+        This Policy applies to the Zenovee marketing Site, including pages that describe our products (such as ZenMerch) and services. If you
+        install or use a Zenovee product/service that has its own terms or privacy notice, those documents apply in addition to this Policy.
+      </p>
+
+      <h2>Who is responsible for your information</h2>
+      <p>
+        <strong>Data controller (EEA/UK/Switzerland):</strong> {siteName}. You can contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a> or
+        via our <a href="/contact">contact form</a>.
+      </p>
+
+      <h2>Information we collect</h2>
+      <p>We collect information in three main ways:</p>
+      <h3>1) Information you provide</h3>
+      <ul>
+        <li><strong>Contact form submissions:</strong> name, email, message content, and optional company and topic.</li>
+        <li><strong>Support and business communications:</strong> information you choose to share when you email us or otherwise contact us.</li>
+      </ul>
+
+      <h3>2) Information collected automatically</h3>
+      <p>
+        When you access the Site, our servers (and service providers that help us operate the Site) may automatically log certain information,
+        including:
+      </p>
+      <ul>
+        <li><strong>Device and usage data:</strong> IP address, browser type, device type, operating system, referring/exit pages, and timestamps.</li>
+        <li><strong>Approximate location:</strong> inferred from IP address.</li>
+        <li><strong>Cookies and similar technologies:</strong> used for essential site operation and, if enabled, analytics. See our <a href="/legal/cookie-policy">Cookie Policy</a>.</li>
+      </ul>
+
+      <h3>3) Information from third parties</h3>
+      <ul>
+        <li>
+          <strong>Email delivery provider:</strong> if you contact us via the Site, we may route messages through an email delivery provider (such as Resend) so
+          we can receive and respond.
+        </li>
+        <li>
+          <strong>Hosting and infrastructure providers:</strong> providers that host the Site may process logs and technical data to deliver the Site securely and reliably.
+        </li>
+        <li>
+          <strong>Content platform (if used):</strong> we may use a content management system (such as Sanity) to manage website content.
+        </li>
+      </ul>
+
+      <h2>How we use personal information</h2>
+      <p>We use personal information to:</p>
+      <ul>
+        <li><strong>Respond to you:</strong> reply to inquiries, schedule demos, and provide support.</li>
+        <li><strong>Operate the Site:</strong> maintain functionality, troubleshoot issues, and improve performance.</li>
+        <li><strong>Security and fraud prevention:</strong> protect the Site and our users from malicious, deceptive, fraudulent, or illegal activity.</li>
+        <li><strong>Business operations:</strong> understand interest in our offerings and improve our documentation and marketing content.</li>
+        <li><strong>Legal compliance:</strong> comply with applicable laws and enforce our agreements.</li>
+      </ul>
+
+      <h2>Legal bases (GDPR/UK GDPR)</h2>
+      <p>
+        If you are located in the European Economic Area (“EEA”), the United Kingdom, or Switzerland, we process your personal information only when we have a valid legal basis, including:
+      </p>
+      <ul>
+        <li><strong>Consent:</strong> when you submit a contact request or when non-essential cookies are used (where required).</li>
+        <li><strong>Legitimate interests:</strong> operating, securing, and improving the Site; communicating with prospective customers; preventing fraud.</li>
+        <li><strong>Contract:</strong> where processing is necessary to take steps at your request before entering into a contract or to perform a contract.</li>
+        <li><strong>Legal obligation:</strong> where we must comply with applicable laws.</li>
+      </ul>
+
+      <h2>How we share personal information</h2>
+      <p>We may share personal information with:</p>
+      <ul>
+        <li><strong>Service providers and processors</strong> that help us run the Site and communicate with you (for example: hosting, email delivery, and content tooling).</li>
+        <li><strong>Professional advisors</strong> (such as lawyers, accountants, and insurers) as needed.</li>
+        <li><strong>Authorities</strong> if required to comply with law or to protect rights, safety, and security.</li>
+        <li><strong>Business transfers</strong> in connection with a merger, acquisition, financing, reorganization, or sale of assets (subject to this Policy).</li>
+      </ul>
+      <p><strong>We do not sell your personal information.</strong> We also do not “share” personal information for cross-context behavioral advertising as defined by certain U.S. privacy laws.</p>
+
+      <h2>International data transfers</h2>
+      <p>
+        We are based in the United States and may process and store information in the U.S. and other countries where our service providers operate. If you are in the EEA/UK/Switzerland, we rely on appropriate safeguards (such as Standard Contractual Clauses) when transferring personal information internationally, where required.
+      </p>
+
+      <h2>Data retention</h2>
+      <p>
+        We retain personal information only as long as necessary for the purposes described in this Policy, unless a longer retention period is required or permitted by law. For example, we may retain contact form messages and related correspondence for a reasonable period to provide support, maintain business records, and address disputes.
+      </p>
+
+      <h2>Your rights and choices</h2>
+      <h3>EEA/UK/Switzerland rights</h3>
+      <p>
+        Depending on your location, you may have the right to request access, correction, deletion, portability, restriction, or to object to certain processing. You may also withdraw consent at any time (where processing is based on consent). You can exercise these rights by contacting us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. You also have the right to lodge a complaint with your local supervisory authority.
+      </p>
+
+      <h3>U.S. privacy rights (including California)</h3>
+      <p>
+        Depending on where you live, you may have rights to request access to, correction of, or deletion of your personal information, and to receive certain disclosures about our data practices. To submit a request, contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We may need to verify your request before we respond.
+      </p>
+      <p>
+        <strong>California notice:</strong> we do not sell personal information and do not share personal information for cross-context behavioral advertising. We do not knowingly collect “sensitive personal information” for the purpose of inferring characteristics about you.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        We use reasonable administrative, technical, and organizational safeguards designed to protect personal information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.
+      </p>
+
+      <h2>Children’s privacy</h2>
+      <p>
+        The Site is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided us personal information, please contact us and we will take appropriate steps to delete it.
+      </p>
+
+      <h2>Changes to this Policy</h2>
+      <p>
+        We may update this Policy from time to time. If we make material changes, we will update the “Last updated” date and, where appropriate, provide additional notice.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        Questions or requests can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a> or via our <a href="/contact">contact page</a>.
+      </p>
+      <p class="text-xs text-white/50">
+        This page is provided for general informational purposes and does not constitute legal advice.
       </p>
     </article>
   </section>

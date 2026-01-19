@@ -14,7 +14,7 @@ type Props = {
 };
 
 const { title, description } = Astro.props;
-const siteName = import.meta.env.PUBLIC_SITE_NAME ?? "Zenovee";
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? "Zenovee LLC";
 const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
 const metaDescription =
   description ??

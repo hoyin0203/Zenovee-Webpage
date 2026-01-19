@@ -1,22 +1,102 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? "Zenovee LLC";
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.com";
 ---
 
 <BaseLayout title="Cookie policy" description="Zenovee cookie policy.">
   <section class="container-pad py-14 sm:py-20">
     <article class="prose prose-invert max-w-3xl reveal" data-reveal>
       <h1>Cookie policy</h1>
-      <p><em>Last updated: 2026-01-11</em></p>
+      <p><em>Last updated: 2026-01-19</em></p>
+
       <p>
-        This is a starter cookie policy. If you enable analytics, update this page accordingly.
+        This Cookie Policy explains how <strong>{siteName}</strong> (“Zenovee,” “we,” “us,” or “our”) uses cookies and similar technologies
+        on our website (the “Site”). For more information about how we handle personal information, see our
+        <a href="/legal/privacy-policy">Privacy Policy</a>.
       </p>
-      <h2>Cookies</h2>
+
+      <h2>What are cookies?</h2>
       <p>
-        Cookies are small files stored on your device. We may use cookies for essential site functionality and (optionally) analytics.
+        Cookies are small text files stored on your device by a website. They help websites function, remember preferences, and (if enabled)
+        measure how the site is used. Similar technologies include local storage, pixels, SDKs, and device identifiers.
       </p>
-      <h2>Contact</h2>
+
+      <h2>How we use cookies</h2>
+      <p>We may use cookies for the following purposes:</p>
+      <ul>
+        <li><strong>Strictly necessary:</strong> required to deliver the Site securely and reliably (for example, basic load balancing or security).</li>
+        <li><strong>Preferences:</strong> remember choices you make (if we add preference features).</li>
+        <li><strong>Analytics (optional):</strong> understand how the Site is used so we can improve it.</li>
+        <li><strong>Marketing (optional):</strong> measure campaign effectiveness or show relevant messaging.</li>
+      </ul>
       <p>
-        For questions, please <a href="/contact">contact us</a>.
+        <strong>Important:</strong> If we use non-essential cookies (such as analytics or marketing cookies) in jurisdictions where consent is required (including the EEA/UK),
+        we will request your consent before setting them.
+      </p>
+
+      <h2>Examples of cookies and similar technologies</h2>
+      <p>
+        The specific cookies used may vary depending on how the Site is hosted and which features are enabled. The list below reflects common
+        categories and examples you may encounter.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Provider</th>
+            <th>Purpose</th>
+            <th>Typical duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strictly necessary</td>
+            <td>Zenovee / hosting provider</td>
+            <td>Security, reliability, and site delivery</td>
+            <td>Session to a short period</td>
+          </tr>
+          <tr>
+            <td>Preferences</td>
+            <td>Zenovee</td>
+            <td>Remember settings (if enabled)</td>
+            <td>Session to persistent</td>
+          </tr>
+          <tr>
+            <td>Analytics (optional)</td>
+            <td>Analytics provider (if enabled)</td>
+            <td>Understand usage patterns to improve the Site</td>
+            <td>Varies (often months)</td>
+          </tr>
+          <tr>
+            <td>Marketing (optional)</td>
+            <td>Marketing provider (if enabled)</td>
+            <td>Measure campaigns and improve relevance</td>
+            <td>Varies</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Your choices</h2>
+      <ul>
+        <li><strong>Browser controls:</strong> you can block or delete cookies through your browser settings. Note that blocking strictly necessary cookies may impact site functionality.</li>
+        <li><strong>Consent (where required):</strong> if we provide a cookie consent tool, you can use it to adjust your preferences at any time.</li>
+      </ul>
+
+      <h2>Do Not Track and Global Privacy Control</h2>
+      <p>
+        Some browsers offer “Do Not Track” signals, and some users enable the Global Privacy Control (“GPC”). There is no uniform standard for how to
+        interpret Do Not Track. If we ever engage in activities that are considered a “sale” or “sharing” of personal information under applicable U.S.
+        privacy laws, we will take appropriate steps to honor opt-out signals such as GPC where required.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        Questions about this Cookie Policy can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a> or via our <a href="/contact">contact page</a>.
+      </p>
+      <p class="text-xs text-white/50">
+        This page is provided for general informational purposes and does not constitute legal advice.
       </p>
     </article>
   </section>
