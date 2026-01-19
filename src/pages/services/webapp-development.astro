@@ -7,13 +7,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
       <div class="lg:col-span-7">
         <div class="reveal" data-reveal>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
+            Dashboards · Portals · Integrations · Automation
+          </p>
           <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Web app development</h1>
           <p class="mt-4 max-w-2xl text-white/70">
-            Build internal tools, customer portals, dashboards, and automation layers—integrated cleanly with your existing stack.
+            Build internal tools, customer portals, dashboards, and automation layers—integrated cleanly with your existing stack and designed for
+            long-term maintainability.
           </p>
           <div class="mt-7 flex flex-col gap-3 sm:flex-row">
             <a class="btn btn-primary" href="/contact">Book a call</a>
             <a class="btn btn-secondary" href="/services">All services</a>
+            <a class="btn btn-secondary" href="/services/shopify-development">Shopify work</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2 text-xs text-white/70">
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Next.js / React</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">TypeScript</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">APIs + integrations</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Auth + roles</span>
+            <span class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">Observability</span>
           </div>
         </div>
       </div>
@@ -21,13 +33,247 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <div class="card reveal p-6" data-reveal>
           <div class="text-base font-semibold">Typical stack</div>
           <ul class="mt-4 grid gap-2 text-sm text-white/70">
-            <li>Next.js / React</li>
-            <li>API integrations and automation</li>
-            <li>Auth + roles</li>
-            <li>Observability and logging</li>
+            <li>Next.js / React + TypeScript</li>
+            <li>Database-backed apps (Postgres/MySQL) + migrations</li>
+            <li>API integrations and automation workflows</li>
+            <li>Authentication + roles and permissions</li>
+            <li>Audit-friendly logging and basic observability</li>
           </ul>
           <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/services/webapp.png" alt="" loading="lazy" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="reveal" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">What we build</h2>
+      <p class="mt-2 max-w-2xl text-sm text-white/65">
+        Practical applications that help teams move faster—without creating a fragile maintenance burden.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="card p-6">
+          <div class="text-sm font-semibold">Internal dashboards</div>
+          <p class="mt-2 text-sm text-white/65">
+            Admin panels for orders, production, fulfillment, customer support, inventory, and reporting—built around your workflows.
+          </p>
+        </div>
+        <div class="card p-6">
+          <div class="text-sm font-semibold">Customer portals</div>
+          <p class="mt-2 text-sm text-white/65">
+            Secure experiences for customers: order status, self-serve changes, proofs/approvals, uploads, subscriptions, and billing.
+          </p>
+        </div>
+        <div class="card p-6">
+          <div class="text-sm font-semibold">Integrations + automation</div>
+          <p class="mt-2 text-sm text-white/65">
+            Background jobs and API bridges that connect Shopify, ERPs, shipping, email, and internal systems—with monitoring built in.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="card reveal p-8 md:p-10" data-reveal>
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Capabilities</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            The building blocks we use for reliable, scalable web apps.
+          </p>
+        </div>
+        <a class="btn btn-secondary hidden sm:inline-flex" href="/contact">Request quote</a>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Auth, roles, and permissions</div>
+          <div class="mt-2 text-sm text-white/65">
+            Single sign-on options, role-based access control, and secure admin tooling.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Data modeling</div>
+          <div class="mt-2 text-sm text-white/65">
+            Database schemas, migrations, and clean domain models that keep complexity manageable.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Integrations</div>
+          <div class="mt-2 text-sm text-white/65">
+            Shopify APIs, shipping, ERPs, CRMs, email providers, storage (S3-style), and custom webhooks.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Background jobs</div>
+          <div class="mt-2 text-sm text-white/65">
+            Scheduled work, queues, retries, idempotency, and safe handling of long-running tasks.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Observability</div>
+          <div class="mt-2 text-sm text-white/65">
+            Structured logging, error tracking hooks, and operational dashboards to keep your team informed.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <div class="text-sm font-semibold">Performance + security basics</div>
+          <div class="mt-2 text-sm text-white/65">
+            Caching, rate limiting guidance, least-privilege access, and secure defaults. (Compliance needs vary by business.)
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/contact">Book a call</a>
+        <a class="btn btn-secondary" href="/services/website-development">Need a marketing site too?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="reveal" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">Our process</h2>
+      <p class="mt-2 max-w-2xl text-sm text-white/65">
+        Clear checkpoints and fast iterations—so you always know what’s next.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-5">
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">1) Discovery</div>
+          <div class="mt-1 text-sm text-white/65">Scope, users, constraints, and success metrics.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">2) UX + architecture</div>
+          <div class="mt-1 text-sm text-white/65">Flows, data model, integration plan, and milestones.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">3) Build</div>
+          <div class="mt-1 text-sm text-white/65">Incremental delivery with weekly checkpoints.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">4) QA + hardening</div>
+          <div class="mt-1 text-sm text-white/65">Edge cases, permission checks, and stability.</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <div class="text-sm font-semibold">5) Launch</div>
+          <div class="mt-1 text-sm text-white/65">Deployment, monitoring, and handoff.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-7">
+        <div class="reveal" data-reveal>
+          <h2 class="text-2xl font-semibold tracking-tight">Timeline expectations</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            Most web apps land in one of these ranges depending on complexity, integrations, and review speed.
+          </p>
+
+          <div class="mt-6 grid gap-3">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold">Prototype / proof of concept</div>
+                <div class="text-xs text-white/60">~ 1–2 weeks</div>
+              </div>
+              <div class="mt-2 text-sm text-white/65">
+                Validate the core workflow and data model quickly. Great for de-risking an integration or new internal process.
+              </div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold">MVP</div>
+                <div class="text-xs text-white/60">~ 3–6 weeks</div>
+              </div>
+              <div class="mt-2 text-sm text-white/65">
+                Auth, core features, integrations, and production deployment—ready for real internal usage.
+              </div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold">Production system</div>
+                <div class="text-xs text-white/60">~ 6–12+ weeks</div>
+              </div>
+              <div class="mt-2 text-sm text-white/65">
+                Multiple integrations, more complex roles, robust automation, monitoring, and refined UX for teams at scale.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="card reveal p-6" data-reveal>
+          <div class="text-base font-semibold">What we need from you</div>
+          <ul class="mt-4 grid gap-2 text-sm text-white/70">
+            <li>Users + roles (who needs access and what they can do)</li>
+            <li>Data sources and integrations (Shopify, ERP, shipping, CRM, etc.)</li>
+            <li>Access to existing systems (API keys, sandbox accounts)</li>
+            <li>Example workflows and edge cases (what “goes wrong” today)</li>
+          </ul>
+          <div class="mt-6 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/65">
+            If you already have a spreadsheet-based workflow, send it to us. It’s often the fastest way to map requirements into a working app.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-20">
+    <div class="card reveal p-8 md:p-10" data-reveal>
+      <div class="grid gap-8 md:grid-cols-2 md:items-start">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">FAQ</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            Common questions about hosting, integrations, access control, and ownership.
+          </p>
+        </div>
+        <div class="grid gap-3">
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Can you integrate with our existing stack?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              Yes. We commonly integrate with Shopify, CRMs, ERPs, shipping providers, email systems, and custom internal APIs. We’ll align on a clear
+              integration plan before building.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">How do you handle permissions and security?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              We implement role-based access control and secure defaults. For regulated environments, we can work with your security/compliance team
+              to meet specific requirements.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Where will the app be hosted?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              We typically deploy on modern hosting with preview environments (often Vercel) and a managed database. If you already have
+              infrastructure, we can deploy into your preferred environment.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Do we own the code?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              Yes—deliverables are built for your business and can be handed over with documentation. We’ll also help set up CI/deployments so your
+              team can continue development after launch.
+            </div>
+          </details>
+          <details class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-white/90">Do you provide ongoing support?</summary>
+            <div class="mt-2 text-sm text-white/65">
+              Yes. After launch we can handle fixes, improvements, new features, and monitoring. Or we can do a clean handoff if you prefer to run it
+              internally.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="/contact">Get a web app quote</a>
+        <a class="btn btn-secondary" href="/services/website-development">Need a marketing site too?</a>
       </div>
     </div>
   </section>
