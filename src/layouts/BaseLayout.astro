@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
 import Interactions from "../components/Interactions.astro";
 import Lightbox from "../components/Lightbox.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import { WebGLBackground } from "../components/WebGLBackground";
 import { ClientRouter } from "astro:transitions";
 
@@ -58,6 +59,8 @@ const metaDescription =
     <div transition:persist>
       <Footer />
     </div>
+
+    <CookieConsent />
 
     <ScrollReveal />
     <Interactions />
