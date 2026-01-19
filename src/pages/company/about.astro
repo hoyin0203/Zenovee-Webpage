@@ -1,34 +1,228 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? "Zenovee LLC";
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.com";
+const zencraftShopUrl = import.meta.env.PUBLIC_ZENCRAFT_SHOP_URL ?? "https://zencraftgifts.com";
+const hqAddress = import.meta.env.PUBLIC_HQ_ADDRESS ?? "";
+
+const lastAddressSegment = hqAddress
+  ? hqAddress
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .slice(-1)[0] ?? ""
+  : "";
+
+const hqLocation = (() => {
+  if (!lastAddressSegment) return "";
+  const m = lastAddressSegment.match(/^(.*)\s+([A-Z]{2})\s+\d{5}(?:-\d{4})?$/);
+  if (!m) return lastAddressSegment;
+  return `${m[1].trim()}, ${m[2]}`;
+})();
 ---
 
-<BaseLayout title="About" description="About Zenovee: a Shopify-first product and services studio.">
+<BaseLayout title="About" description="About Zenovee: a Shopify-first product and services studio building ZenMerch and real commerce experiences.">
   <section class="container-pad py-14 sm:py-20">
     <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
       <div class="lg:col-span-7">
         <div class="reveal" data-reveal>
-          <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">About Zenovee</h1>
-          <p class="mt-4 text-white/70">
-            Zenovee is a new company building Shopify-first products and offering engineering services. Our first product is ZenMerch: a Shopify
-            product personalization app designed for a smooth merchant + fulfillment workflow.
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
+            Shopify-first studio · Products + engineering services
+          </p>
+          <h1 class="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">About Zenovee</h1>
+          <p class="mt-4 max-w-2xl text-pretty text-base text-white/70 sm:text-lg">
+            {siteName} builds products and services that help brands sell personalized goods on Shopify—fast, reliable, and review-ready.
+          </p>
+          <p class="mt-4 max-w-2xl text-pretty text-white/70">
+            Our flagship product is <a class="text-white/85 hover:text-white" href="/products/zenmerch">ZenMerch</a>, a Shopify personalization app built for
+            Online Store 2.0. We also offer engineering services for Shopify storefronts, integrations, and internal tools—shipping clean UX and production-grade reliability.
           </p>
           <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a class="btn btn-primary" href="/products">Explore products</a>
+            <a class="btn btn-primary" href="/products/zenmerch">Explore ZenMerch</a>
             <a class="btn btn-secondary" href="/services">Services</a>
-            <a class="btn btn-secondary" href="/company/roadmap">Roadmap</a>
+            <a class="btn btn-secondary" href="/contact">Contact</a>
           </div>
         </div>
       </div>
+
+      <div class="lg:col-span-5">
+        <div class="card reveal p-6" data-reveal>
+          <div class="text-base font-semibold">Quick facts</div>
+          <div class="mt-4 grid gap-3 text-sm text-white/70">
+            <div class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 7.5v9A2.25 2.25 0 0 1 19.5 18.75h-15A2.25 2.25 0 0 1 2.25 16.5v-9m19.5 0A2.25 2.25 0 0 0 19.5 5.25h-15A2.25 2.25 0 0 0 2.25 7.5m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0l-7.5-4.615A2.25 2.25 0 0 1 2.25 7.743V7.5"></path>
+              </svg>
+              <div>
+                <div class="font-semibold text-white/85">Support</div>
+                <a class="text-brand-200 hover:text-brand-100" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+              </svg>
+              <div>
+                <div class="font-semibold text-white/85">Headquarters</div>
+                <div>{hqLocation || "United States"}</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3l8.25 4.5v9L12 21l-8.25-4.5v-9L12 3Z"
+                ></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l8.25-4.5"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12v9"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12L3.75 7.5"></path>
+              </svg>
+              <div>
+                <div class="font-semibold text-white/85">Focus</div>
+                <div>Shopify OS 2.0 apps, storefront UX, and operations tooling</div>
+              </div>
+            </div>
+          </div>
+
+          <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/company/about.svg" alt="" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="reveal" data-reveal>
+      <h2 class="text-2xl font-semibold tracking-tight">What we do</h2>
+      <p class="mt-2 max-w-2xl text-sm text-white/65">
+        We build conversion-friendly experiences that stay maintainable for merchants and fulfillment teams.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="card p-6">
+          <div class="flex items-center justify-between">
+            <div class="text-sm font-semibold">ZenMerch</div>
+            <span class="rounded-full bg-brand-500/15 px-2 py-1 text-xs font-semibold text-brand-200 ring-1 ring-brand-500/25">App</span>
+          </div>
+          <p class="mt-3 text-sm text-white/65">
+            Product personalization for Online Store 2.0: live preview, validation, templates + targeting, and webhooks/exports for fulfillment.
+          </p>
+          <div class="mt-5 flex gap-2">
+            <a class="btn btn-secondary w-full" href="/products/zenmerch/features">Features</a>
+            <a class="btn btn-primary w-full" href="/products/zenmerch/docs">Docs</a>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="text-sm font-semibold">Shopify engineering services</div>
+          <p class="mt-3 text-sm text-white/65">
+            Storefront builds, theme customization, app integrations, performance tuning, and operational tooling—implemented with clear handoff docs.
+          </p>
+          <div class="mt-5 flex gap-2">
+            <a class="btn btn-secondary w-full" href="/services">What we offer</a>
+            <a class="btn btn-primary w-full" href="/contact">Get a quote</a>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center justify-between">
+            <div class="text-sm font-semibold">ZenCraft Gifts</div>
+            <span class="rounded-full bg-white/5 px-2 py-1 text-xs font-semibold text-white/70 ring-1 ring-white/10">Shop</span>
+          </div>
+          <p class="mt-3 text-sm text-white/65">
+            Our real storefront where we validate UX in the wild—so our product decisions stay grounded in real merchant workflows.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-primary w-full" href={zencraftShopUrl} target="_blank" rel="noreferrer">Visit shop →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-14 sm:pb-20">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-7">
+        <div class="reveal" data-reveal>
+          <h2 class="text-2xl font-semibold tracking-tight">How we build</h2>
+          <p class="mt-2 max-w-2xl text-sm text-white/65">
+            We keep the bar high on UX and long-term maintainability—because Shopify stores evolve fast.
+          </p>
+
+          <div class="mt-6 grid gap-3">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+              <div class="text-sm font-semibold text-white/90">Shopify-native, OS 2.0-first</div>
+              <div class="mt-1 text-sm text-white/65">
+                We prefer app blocks, theme app extensions, and clear configuration over brittle snippets and one-off hacks.
+              </div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+              <div class="text-sm font-semibold text-white/90">Operational readiness</div>
+              <div class="mt-1 text-sm text-white/65">
+                We design for fulfillment: predictable exports, webhook-driven flows, and documentation that passes Shopify review.
+              </div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+              <div class="text-sm font-semibold text-white/90">Fast iteration, clean handoffs</div>
+              <div class="mt-1 text-sm text-white/65">
+                We ship in small increments, keep interfaces stable, and leave behind clear docs so teams can move faster after launch.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="lg:col-span-5">
         <div class="card reveal p-6" data-reveal>
           <div class="text-base font-semibold">What we value</div>
           <ul class="mt-4 grid gap-2 text-sm text-white/70">
             <li>Clear UX and modern performance</li>
-            <li>Shopify-review-safe documentation</li>
-            <li>Maintainable storefront integration</li>
+            <li>Shopify-review-ready documentation</li>
+            <li>Maintainable storefront integrations</li>
             <li>Fast support loops for merchants</li>
+            <li>Security and data minimization by default</li>
+            <li>Design decisions backed by real storefront usage</li>
           </ul>
-          <img class="mt-5 w-full rounded-xl border border-white/10 bg-white/[0.02]" src="/images/company/about.svg" alt="" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-pad pb-20">
+    <div class="card reveal p-8 md:p-10" data-reveal>
+      <div class="grid gap-8 md:grid-cols-2 md:items-center">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Want to work together?</h2>
+          <p class="mt-3 text-sm text-white/65">
+            Whether you’re launching personalization, improving conversion, or building a new Shopify experience, we’ll give you clear next steps.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a class="btn btn-primary" href="/contact">Talk to us</a>
+            <a class="btn btn-secondary" href="/products/zenmerch/demo">See ZenMerch demo</a>
+            <a class="btn btn-secondary" href="/company/roadmap">Roadmap</a>
+          </div>
+        </div>
+        <div class="grid gap-3">
+          <a class="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/75 hover:bg-white/[0.05]" href="/products/zenmerch/docs">
+            <div class="font-semibold text-white">Documentation</div>
+            <div class="mt-1">Public docs suitable for Shopify review and merchant onboarding.</div>
+          </a>
+          <a class="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/75 hover:bg-white/[0.05]" href="/services">
+            <div class="font-semibold text-white">Services</div>
+            <div class="mt-1">Storefront builds, integrations, and performance work.</div>
+          </a>
+          <a
+            class="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/75 hover:bg-white/[0.05]"
+            href={zencraftShopUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="font-semibold text-white">ZenCraft Gifts</div>
+            <div class="mt-1">See our apps and UX decisions in a real storefront.</div>
+          </a>
         </div>
       </div>
     </div>

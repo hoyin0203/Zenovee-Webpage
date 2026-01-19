@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const zencraftShopUrl = import.meta.env.PUBLIC_ZENCRAFT_SHOP_URL ?? "https://zencraftgifts.com";
 ---
 
-<BaseLayout title="Roadmap" description="Zenovee roadmap: ZenMerch improvements and future products like ZenCraft.">
+<BaseLayout title="Roadmap" description="Zenovee roadmap: ZenMerch improvements, storefront experiments, and future products.">
   <section class="container-pad py-14 sm:py-20">
     <div class="reveal" data-reveal>
       <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Roadmap</h1>
@@ -21,12 +22,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </ul>
       </div>
       <div class="card reveal p-6" data-reveal>
-        <div class="text-base font-semibold">ZenCraft Gifts(coming soon)</div>
+        <div class="text-base font-semibold">ZenCraft Gifts (shop)</div>
         <ul class="mt-4 grid gap-2 text-sm text-white/70">
-          <li>Early ideation and market validation</li>
-          <li>Prototype experiences and pilots</li>
-          <li>Launch planning under zenovee.com/products</li>
+          <li>Iterate product pages, collections, and conversion UX</li>
+          <li>Validate personalization workflows in real storefront traffic</li>
+          <li>Use learnings to improve ZenMerch docs and defaults</li>
         </ul>
+        <div class="mt-5">
+          <a class="btn btn-primary w-full" href={zencraftShopUrl} target="_blank" rel="noreferrer">Visit shop →</a>
+        </div>
       </div>
     </div>
   </section>
