@@ -1,6 +1,27 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="128" height="128" rx="28" fill="#070A0F"/>
-  <path d="M35 40h58l-44 48h44" stroke="#22D3EE" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="92" cy="40" r="6" fill="#22D3EE"/>
-</svg>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="zenoveeMonoZ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#139EB1"></stop>
+      <stop offset="100%" stop-color="#48B2E0"></stop>
+    </linearGradient>
+  </defs>
 
+  <!-- Dark Zenovee site background -->
+  <rect width="512" height="512" rx="96" fill="#0B1115"></rect>
+
+  <!-- Mono-style Z (grid-based, even weight) -->
+  <path d="
+      M156 168
+      H356
+      V204
+      L236 308
+      H356
+      V344
+      H156
+      V308
+      L276 204
+      H156
+      Z
+    " fill="url(#zenoveeMonoZ)"></path>
+</svg>
