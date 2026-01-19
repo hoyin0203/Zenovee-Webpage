@@ -307,6 +307,11 @@ const products = [
     transform: translateY(0);
     pointer-events: auto;
   }
+  nav > .relative[data-zen-dismissed="1"] .nav-dropdown {
+    opacity: 0 !important;
+    transform: translateY(-8px) !important;
+    pointer-events: none !important;
+  }
   .nav-dropdown {
     transform: translateY(-8px);
   }
@@ -326,37 +331,74 @@ const products = [
 </style>
 
 <script is:inline>
-  const toggle = document.getElementById("navToggle");
-  const root = document.getElementById("mobileNav");
-  const overlay = document.getElementById("mobileNavOverlay");
-  const closeBtn = document.getElementById("navClose");
+  (() => {
+    const bind = () => {
+      // Desktop dropdowns: dismiss on click so submenu doesn't stay open after navigation.
+      document.querySelectorAll("header nav > .relative").forEach((wrap) => {
+        if (wrap.dataset.zenDropdownBound === "1") return;
+        wrap.dataset.zenDropdownBound = "1";
 
-  const open = () => {
-    root.classList.remove("hidden");
-    root.setAttribute("data-open", "true");
-    root.setAttribute("aria-hidden", "false");
-    toggle.setAttribute("aria-expanded", "true");
-    document.documentElement.style.overflow = "hidden";
-  };
+        const dismiss = () => {
+          wrap.dataset.zenDismissed = "1";
+          const active = document.activeElement;
+          if (active instanceof HTMLElement) active.blur();
+        };
 
-  const close = () => {
-    root.setAttribute("data-open", "false");
-    root.setAttribute("aria-hidden", "true");
-    toggle.setAttribute("aria-expanded", "false");
-    document.documentElement.style.overflow = "";
-    // wait for animation then hide
-    window.setTimeout(() => root.classList.add("hidden"), 230);
-  };
+        wrap.querySelectorAll("a").forEach((a) => a.addEventListener("click", dismiss));
+        wrap.addEventListener("pointerleave", () => wrap.removeAttribute("data-zen-dismissed"));
+        wrap.addEventListener("focusin", () => wrap.removeAttribute("data-zen-dismissed"));
+      });
 
-  toggle?.addEventListener("click", () => {
-    const isOpen = root.getAttribute("data-open") === "true";
-    isOpen ? close() : open();
-  });
-  overlay?.addEventListener("click", close);
-  closeBtn?.addEventListener("click", close);
-  root?.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && root.getAttribute("data-open") === "true") close();
-  });
+      // Mobile menu
+      const toggle = document.getElementById("navToggle");
+      const root = document.getElementById("mobileNav");
+      const overlay = document.getElementById("mobileNavOverlay");
+      const closeBtn = document.getElementById("navClose");
+      if (!toggle || !root || !overlay || !closeBtn) return;
+
+      if (root.dataset.zenMobileNavBound === "1") return;
+      root.dataset.zenMobileNavBound = "1";
+
+      const closeDetails = () => {
+        root.querySelectorAll("details[open]").forEach((d) => d.removeAttribute("open"));
+      };
+
+      const open = () => {
+        root.classList.remove("hidden");
+        root.setAttribute("data-open", "true");
+        root.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+        document.documentElement.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        root.setAttribute("data-open", "false");
+        root.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+        document.documentElement.style.overflow = "";
+        closeDetails();
+        // wait for animation then hide
+        window.setTimeout(() => root.classList.add("hidden"), 230);
+      };
+
+      toggle.addEventListener("click", () => {
+        const isOpen = root.getAttribute("data-open") === "true";
+        isOpen ? close() : open();
+      });
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      root.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && root.getAttribute("data-open") === "true") close();
+      });
+    };
+
+    if (!window.__zenoveeNavBound) {
+      window.__zenoveeNavBound = true;
+      document.addEventListener("astro:page-load", bind);
+      document.addEventListener("astro:after-swap", bind);
+    }
+    bind();
+  })();
 </script>
 
