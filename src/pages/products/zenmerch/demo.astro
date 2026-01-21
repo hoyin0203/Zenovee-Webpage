@@ -1,5 +1,20 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const vimeoId = import.meta.env.PUBLIC_ZENMERCH_DEMO_VIMEO_ID;
+const vimeoHash = import.meta.env.PUBLIC_ZENMERCH_DEMO_VIMEO_HASH;
+
+const vimeoEmbedSrc = (() => {
+  if (!vimeoId) return null;
+  const params = new URLSearchParams({ dnt: "1", title: "0", byline: "0", portrait: "0" });
+  if (vimeoHash) params.set("h", vimeoHash);
+  return `https://player.vimeo.com/video/${vimeoId}?${params.toString()}`;
+})();
+
+const vimeoWatchUrl = (() => {
+  if (!vimeoId) return null;
+  return vimeoHash ? `https://vimeo.com/${vimeoId}/${vimeoHash}` : `https://vimeo.com/${vimeoId}`;
+})();
 ---
 
 <BaseLayout title="ZenMerch Demo" description="See a quick ZenMerch demo and request a guided walk-through.">
@@ -7,7 +22,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     <div class="reveal" data-reveal>
       <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">ZenMerch demo</h1>
       <p class="mt-4 max-w-2xl text-white/70">
-        A short visual overview. Replace the placeholder with a real demo video or a live store link when ready.
+        A short visual overview of how ZenMerch looks and feels in-store.
       </p>
     </div>
 
@@ -15,15 +30,40 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       <div class="lg:col-span-8">
         <div class="card reveal overflow-hidden" data-reveal>
           <div class="aspect-video bg-black/30">
-            <div class="flex h-full items-center justify-center p-8 text-center">
-              <div>
-                <div class="text-sm font-semibold text-white/80">Demo video placeholder</div>
-                <p class="mt-2 text-sm text-white/60">Embed a YouTube/Vimeo video here, or link to a live demo store.</p>
-              </div>
-            </div>
+            {
+              vimeoEmbedSrc ? (
+                <iframe
+                  class="h-full w-full"
+                  src={vimeoEmbedSrc}
+                  title="ZenMerch demo video"
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                />
+              ) : (
+                <div class="flex h-full items-center justify-center p-8 text-center">
+                  <div>
+                    <div class="text-sm font-semibold text-white/80">Vimeo demo not configured</div>
+                    <p class="mt-2 text-sm text-white/60">
+                      Set <code>PUBLIC_ZENMERCH_DEMO_VIMEO_ID</code> (and optional <code>PUBLIC_ZENMERCH_DEMO_VIMEO_HASH</code>) in{" "}
+                      <code>.env</code> / Vercel Environment Variables.
+                    </p>
+                  </div>
+                </div>
+              )
+            }
           </div>
           <div class="border-t border-white/10 p-5 text-sm text-white/70">
             Tip: Shopify reviewers love clear “how to install + how it works” content. Pair this demo with the docs page.
+            {vimeoWatchUrl ? (
+              <>
+                {" "}
+                <a class="underline decoration-white/30 underline-offset-2 hover:decoration-white/70" href={vimeoWatchUrl} target="_blank">
+                  Watch on Vimeo
+                </a>
+                .
+              </>
+            ) : null}
           </div>
         </div>
       </div>

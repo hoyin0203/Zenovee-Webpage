@@ -11,6 +11,8 @@ interface ImportMetaEnv {
   readonly PUBLIC_SOCIAL_FACEBOOK?: string;
   readonly PUBLIC_SOCIAL_YOUTUBE?: string;
   readonly PUBLIC_SOCIAL_TIKTOK?: string;
+  readonly PUBLIC_ZENMERCH_DEMO_VIMEO_ID?: string;
+  readonly PUBLIC_ZENMERCH_DEMO_VIMEO_HASH?: string;
 }
 
 interface ImportMeta {
