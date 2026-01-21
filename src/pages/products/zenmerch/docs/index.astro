@@ -2,11 +2,11 @@
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 
 const docs = [
-  { title: "Getting started", desc: "Install ZenMerch, enable the embed, add the product block, and test.", href: "/products/zenmerch/docs/getting-started" },
-  { title: "Theme integration (OS 2.0)", desc: "Enable the embed and add the theme app block to product templates.", href: "/products/zenmerch/docs/theme-integration" },
+  { title: "Getting started", desc: "Install ZenMerch, enable the embed, create your first template, target products, and test.", href: "/products/zenmerch/docs/getting-started" },
+  { title: "Theme integration (OS 2.0)", desc: "Enable the ZenMerch app embed and verify it’s active on product pages.", href: "/products/zenmerch/docs/theme-integration" },
   { title: "Templates + targeting", desc: "Create a template once and apply it across products using rules.", href: "/products/zenmerch/docs/templates-targeting" },
   { title: "Webhooks + CSV export", desc: "Production-ready operations: webhooks and CSV-friendly exports.", href: "/products/zenmerch/docs/webhooks-exports" },
-  { title: "Troubleshooting", desc: "Block not showing? Changes not updating? Fix common setup issues fast.", href: "/products/zenmerch/docs/troubleshooting" },
+  { title: "Troubleshooting", desc: "Personalizer not showing? Changes not updating? Fix common setup issues fast.", href: "/products/zenmerch/docs/troubleshooting" },
 ];
 ---
 
@@ -29,7 +29,10 @@ const docs = [
       <ol class="mt-4 grid gap-2 text-sm text-white/70">
         <li><span class="text-white/85 font-semibold">1)</span> Install ZenMerch and open it in Shopify admin.</li>
         <li><span class="text-white/85 font-semibold">2)</span> Enable the ZenMerch app embed in Theme Editor (App embeds → enable → Save).</li>
-        <li><span class="text-white/85 font-semibold">3)</span> Add the ZenMerch app block to your product template (above buy buttons).</li>
+        <li>
+          <span class="text-white/85 font-semibold">3)</span> Open a targeted product page and confirm the personalizer loads (no manual block
+          placement required).
+        </li>
         <li><span class="text-white/85 font-semibold">4)</span> Create a template: fields + layers, link them, Save.</li>
         <li><span class="text-white/85 font-semibold">5)</span> Apply to products using Products assignment or Rules (tags/title/vendor/type).</li>
         <li><span class="text-white/85 font-semibold">6)</span> Test on storefront (preview + validation + uploads), place a test order.</li>

@@ -5,16 +5,16 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
 
 <ZenmerchDocsLayout
   title="ZenMerch Troubleshooting"
-  description="Common ZenMerch setup issues: block not showing, changes not updating, wrong theme, and status refresh."
+  description="Common ZenMerch setup issues: personalizer not showing, changes not updating, wrong theme, and status refresh."
 >
   <article class="prose prose-invert max-w-none">
     <h1>Troubleshooting</h1>
     <p>Common causes and fixes—focused on getting you unblocked fast.</p>
 
-    <h2 id="block-not-showing">The block isn’t showing on the storefront</h2>
+    <h2 id="block-not-showing">The personalizer isn’t showing on the storefront</h2>
     <ul>
-      <li>Confirm you added the ZenMerch app block to the correct <strong>product template</strong> in Theme Editor.</li>
-      <li>Confirm you clicked <strong>Save</strong> in Theme Editor after enabling the embed and adding the block.</li>
+      <li>Confirm the ZenMerch <strong>app embed</strong> is enabled in Theme Editor (App embeds → ZenMerch) and you clicked <strong>Save</strong>.</li>
+      <li>Confirm you’re checking the same theme (published theme vs draft theme).</li>
       <li>Confirm the product is actually <strong>targeted</strong> by a template (Products assignment or Rules).</li>
     </ul>
 
@@ -35,7 +35,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
     <h2 id="support">Still stuck?</h2>
     <p>
       Contact us via <a href="/contact">contact form</a> or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. Include your store URL,
-      theme name, and a screenshot of the Theme Editor product template.
+      theme name, and a screenshot of Theme Editor showing ZenMerch enabled in <strong>App embeds</strong>.
     </p>
   </article>
 </ZenmerchDocsLayout>

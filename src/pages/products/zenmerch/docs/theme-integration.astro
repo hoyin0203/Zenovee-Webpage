@@ -5,36 +5,26 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
 
 <ZenmerchDocsLayout
   title="ZenMerch Theme Integration (OS 2.0)"
-  description="Enable the ZenMerch app embed and add the theme app block to your product template (Online Store 2.0)."
+  description="Enable the ZenMerch app embed for Online Store 2.0 and verify the personalizer is active on product pages."
 >
   <article class="prose prose-invert max-w-none">
     <h1>Theme integration (Online Store 2.0)</h1>
     <p>
-      ZenMerch integrates using Shopify’s supported extension architecture: a <strong>theme app block</strong> for the personalizer UI and an
-      <strong> app embed</strong> for global behavior (when needed). This avoids risky manual theme code edits.
+      ZenMerch integrates using Shopify’s supported extension architecture via a <strong>theme app embed</strong>. Once enabled, ZenMerch
+      automatically loads the personalizer UI on targeted product pages—no manual theme code edits or app block placement required.
     </p>
 
-    <h2 id="embed">Enable the app embed</h2>
+    <h2 id="embed">Enable the ZenMerch app embed</h2>
     <ol>
       <li>In ZenMerch, go to <strong>Settings → Theme integration</strong>.</li>
       <li>Click <strong>Enable ZenMerch embed</strong> to open Shopify Theme Editor.</li>
       <li>In Theme Editor → <strong>App embeds</strong>, enable the ZenMerch embed, then <strong>Save</strong>.</li>
     </ol>
 
-    <h2 id="block">Add the personalizer block</h2>
-    <ol>
-      <li>In ZenMerch, click <strong>Add personalizer block</strong> (opens Theme Editor on a product template).</li>
-      <li>Add the ZenMerch app block inside <strong>Product information</strong>.</li>
-      <li>
-        Placement recommendation: put it <strong>above the buy buttons</strong> for best conversion and usability.
-      </li>
-      <li>Click <strong>Save</strong> in Theme Editor.</li>
-    </ol>
-
     <ScreenshotFigure
       src="/images/zenmerch/screenshots/Admin-Settings-ThemeIntegration.png"
       alt="ZenMerch admin theme integration settings"
-      caption="Theme integration: enable the app embed, then add the product page block in Theme Editor."
+      caption="Theme integration: enable the app embed in Theme Editor, then Save."
       aspectClass="aspect-[16/9]"
     />
 
@@ -47,7 +37,7 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
 
     <h2 id="status">Diagnostics</h2>
     <p>
-      If you make changes in Theme Editor, use <strong>Refresh status</strong> inside ZenMerch to rescan the embed/block status.
+      If you make changes in Theme Editor, use <strong>Refresh status</strong> inside ZenMerch to rescan the embed status.
     </p>
   </article>
 </ZenmerchDocsLayout>
