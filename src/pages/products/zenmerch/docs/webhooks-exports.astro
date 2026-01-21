@@ -15,11 +15,18 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
     </p>
 
     <h2 id="webhooks">Webhooks</h2>
-    <ul>
-      <li>Send order + personalization payloads to your system automatically.</li>
-      <li>Test payload delivery from Settings (recommended before going live).</li>
-      <li>Track success/failure and HTTP status for debugging.</li>
-    </ul>
+    <p>Use webhooks to send order + personalization payloads to your system automatically.</p>
+
+    <h3 id="webhook-setup">Set up a webhook URL</h3>
+    <ol>
+      <li>In ZenMerch, go to <strong>Settings → Notifications</strong>.</li>
+      <li>Set <strong>Webhook URL</strong> to your endpoint (recommended: publicly reachable <strong>HTTPS</strong> URL).</li>
+      <li>Click <strong>Save</strong> in ZenMerch Settings.</li>
+      <li>Click <strong>Send test webhook</strong> and confirm it returns <strong>Test OK</strong>.</li>
+      <li>
+        Optional: in the app, click <strong>Show webhook payload documentation</strong> to see the exact JSON structure ZenMerch sends.
+      </li>
+    </ol>
 
     <ScreenshotFigure
       src="/images/zenmerch/screenshots/Settings-Webhook.png"
@@ -28,11 +35,31 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
       aspectClass="aspect-[16/9]"
     />
 
-    <h2 id="exports">CSV export</h2>
+    <h3 id="webhook-troubleshooting">Webhook troubleshooting</h3>
     <ul>
-      <li>Export CSV-friendly rows for production teams or third-party tools.</li>
-      <li>Useful for batching and print/production workflows.</li>
+      <li>
+        <strong>Test failed</strong>: verify the URL is correct, reachable from the public internet, and responds with a <strong>2xx</strong> status.
+      </li>
+      <li>
+        <strong>401/403</strong>: your endpoint is rejecting the request (authentication / firewall / allowlist). Check your server logs.
+      </li>
+      <li>
+        <strong>Timeouts</strong>: keep webhook handlers fast—queue work in the background and respond quickly.
+      </li>
     </ul>
+
+    <h2 id="exports">CSV export</h2>
+    <p>Export CSV-friendly rows for production teams or third-party tools (batching, print queues, QA).</p>
+
+    <h3 id="export-steps">Export steps</h3>
+    <ol>
+      <li>In ZenMerch, open <strong>Orders</strong>.</li>
+      <li>Use <strong>Export all (CSV)</strong> or select orders and click <strong>Export selected CSV</strong>.</li>
+      <li>Open the CSV in Excel/Sheets and use the <strong>Preview URL</strong> columns to review artwork.</li>
+    </ol>
+    <p>
+      Note: exports may be restricted on some plans. If an export button is disabled, check <strong>Plans</strong> / billing in the app.
+    </p>
 
     <ScreenshotFigure
       src="/images/zenmerch/screenshots/Orders-ViewPersonalization.png"

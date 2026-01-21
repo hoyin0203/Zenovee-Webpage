@@ -4,24 +4,32 @@ import { groq, sanityClient } from "../../../lib/sanity";
 
 const fallbackFaqs = [
   {
-    q: "Is ZenMerch a Shopify app?",
-    a: "Yes. ZenMerch is designed as a Shopify app and is built to keep key information publicly accessible (pricing, docs, legal, contact).",
+    q: "How do I install and enable ZenMerch?",
+    a: "Install ZenMerch, then enable the ZenMerch app embed in Shopify Theme Editor (Online Store → Themes → Customize → App embeds → ZenMerch → Save). See the Getting started doc for the full checklist.",
   },
   {
-    q: "Does ZenMerch support theme extensions / OS2?",
-    a: "ZenMerch is built with a theme-extension approach in mind for modern Shopify themes. See the docs for setup guidance.",
+    q: "Does ZenMerch work with my theme?",
+    a: "ZenMerch is designed for Online Store 2.0 themes that support App embeds. If your theme doesn’t have App embeds, it’s likely a vintage theme—switch/upgrade to an OS 2.0 theme.",
   },
   {
-    q: "Can I charge extra for customizations?",
-    a: "Yes—ZenMerch supports dynamic pricing patterns so you can charge for premium options.",
+    q: "Why isn’t the personalizer showing on my product page?",
+    a: "Most commonly: the app embed isn’t enabled (or not saved), you edited a different theme than the live theme, or the product isn’t targeted by a template. Start with the Troubleshooting doc for the step-by-step checks.",
   },
   {
-    q: "How do uploads work?",
-    a: "Customers can upload assets (with validations). ZenMerch is designed to pass clean order data and assets into fulfillment workflows.",
+    q: "Where does the personalization data appear?",
+    a: "ZenMerch records personalization into the order item’s custom fields and makes it easy to review in the ZenMerch Orders page. Paid plans can export CSV and send webhooks for fulfillment workflows.",
   },
   {
     q: "How do I get support?",
-    a: "Use the contact form on zenovee.com/contact or email support (listed in the footer).",
+    a: "Use the contact form on zenovee.com/contact or email support (listed in the footer). Include your myshopify.com domain, theme name (Live vs Draft), an example product URL, and screenshots of App embeds + ZenMerch settings.",
+  },
+  {
+    q: "How do webhooks work?",
+    a: "Set a Webhook URL in ZenMerch Settings → Notifications, then use “Send test webhook” to verify delivery. Your endpoint should be a publicly reachable HTTPS URL and respond with a 2xx status.",
+  },
+  {
+    q: "How do I uninstall ZenMerch?",
+    a: "Disable the ZenMerch app embed in Theme Editor (App embeds → ZenMerch → Save), then uninstall ZenMerch from Shopify admin → Apps.",
   },
 ];
 
@@ -54,6 +62,25 @@ const faqs =
         <a class="btn btn-secondary" href="/products/zenmerch/docs">Docs</a>
         <a class="btn btn-secondary" href="/products/zenmerch/pricing">Pricing</a>
       </div>
+    </div>
+
+    <div class="card reveal mt-10 p-6 sm:p-8" data-reveal>
+      <div class="text-base font-semibold">Fastest path to a fix</div>
+      <p class="mt-2 text-sm text-white/65">Most issues are resolved by checking these Shopify-native steps:</p>
+      <ol class="mt-4 grid gap-2 text-sm text-white/70">
+        <li>
+          <span class="text-white/85 font-semibold">1)</span> Theme Editor → <strong>App embeds</strong> → ZenMerch → <strong>Save</strong>
+        </li>
+        <li>
+          <span class="text-white/85 font-semibold">2)</span> Confirm you edited the <strong>Live</strong> theme (or the same theme customers view)
+        </li>
+        <li>
+          <span class="text-white/85 font-semibold">3)</span> Confirm the product is <strong>targeted</strong> by a template
+        </li>
+        <li>
+          <span class="text-white/85 font-semibold">4)</span> If still stuck: use <a class="underline decoration-white/30 underline-offset-2 hover:decoration-white/70" href="/products/zenmerch/docs/troubleshooting">Troubleshooting</a>
+        </li>
+      </ol>
     </div>
 
     <div class="mt-10 grid gap-3">

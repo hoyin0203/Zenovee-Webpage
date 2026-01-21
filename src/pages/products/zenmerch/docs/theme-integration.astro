@@ -18,7 +18,10 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
     <ol>
       <li>In ZenMerch, go to <strong>Settings → Theme integration</strong>.</li>
       <li>Click <strong>Enable ZenMerch embed</strong> to open Shopify Theme Editor.</li>
-      <li>In Theme Editor → <strong>App embeds</strong>, enable the ZenMerch embed, then <strong>Save</strong>.</li>
+      <li>
+        In Theme Editor: open <strong>App embeds</strong> (plug icon), enable the ZenMerch embed, then click <strong>Save</strong>.
+      </li>
+      <li>Back in ZenMerch, click <strong>Refresh status</strong> to confirm the embed is enabled.</li>
     </ol>
 
     <ScreenshotFigure
@@ -39,6 +42,29 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
     <p>
       If you make changes in Theme Editor, use <strong>Refresh status</strong> inside ZenMerch to rescan the embed status.
     </p>
+
+    <h2 id="quick-fixes">Quick fixes (common Shopify setup issues)</h2>
+    <ul>
+      <li>
+        <strong>ZenMerch isn’t listed under App embeds</strong>: confirm the app is installed and your theme is <strong>Online Store 2.0</strong>.
+        (Vintage themes don’t support App embeds.)
+      </li>
+      <li>
+        <strong>Enabled, but not showing on storefront</strong>: make sure you edited the <strong>Live</strong> theme (or the same theme customers
+        are viewing), then confirm the product is <strong>targeted</strong> by a template.
+      </li>
+      <li>
+        <strong>Changes not updating</strong>: click <strong>Save</strong> in Theme Editor, then hard refresh the product page (or test in an
+        incognito window).
+      </li>
+    </ul>
+
+    <h2 id="disable">Disable / uninstall</h2>
+    <ol>
+      <li>Shopify admin → <strong>Online Store → Themes → Customize</strong>.</li>
+      <li>Theme Editor → <strong>App embeds</strong> → toggle off <strong>ZenMerch</strong> → <strong>Save</strong>.</li>
+      <li>To uninstall: Shopify admin → <strong>Apps</strong> → ZenMerch → <strong>Uninstall</strong>.</li>
+    </ol>
   </article>
 </ZenmerchDocsLayout>
 

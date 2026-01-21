@@ -15,6 +15,21 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
       This guide gets you from install → live personalizer → first test order.
     </p>
 
+    <h2 id="before-you-start">Before you start</h2>
+    <ul>
+      <li>
+        <strong>Online Store 2.0 theme required</strong> (Theme Editor has <strong>App embeds</strong>).
+      </li>
+      <li>
+        <strong>Know which theme is Live</strong>: Shopify admin → <strong>Online Store → Themes</strong>. Enable ZenMerch on the same theme
+        customers see.
+      </li>
+      <li>
+        <strong>Have a test product ready</strong>. If you plan to use tag-based targeting, add a simple tag like <code>zenmerch</code> to that
+        product.
+      </li>
+    </ul>
+
     <h2 id="install">1) Install and open the app</h2>
     <ol>
       <li>Install <strong>ZenMerch</strong> from the Shopify App Store (or your install link).</li>
@@ -26,7 +41,10 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
     <ol>
       <li>In ZenMerch, go to <strong>Settings → Theme integration</strong>.</li>
       <li>Click <strong>Enable ZenMerch embed</strong> (opens Shopify Theme Editor).</li>
-      <li>Theme Editor → <strong>App embeds</strong> → enable ZenMerch → <strong>Save</strong>.</li>
+      <li>
+        In Theme Editor: open <strong>App embeds</strong> (plug icon) → enable <strong>ZenMerch</strong> → click <strong>Save</strong>.
+      </li>
+      <li>Back in ZenMerch, click <strong>Refresh status</strong> to confirm the embed is enabled.</li>
       <li>
         Open any <strong>targeted product page</strong> to confirm the personalizer is showing (no manual app block placement required).
       </li>
@@ -49,6 +67,10 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
       <li><strong>Products</strong>: assign the template to selected products.</li>
       <li><strong>Rules</strong>: assign automatically via tags/title/vendor/type.</li>
     </ul>
+    <p>
+      Shopify tip (tags): Shopify admin → <strong>Products</strong> → select a product → <strong>Tags</strong> → add tag (e.g. <code>zenmerch</code>)
+      → <strong>Save</strong>.
+    </p>
 
     <ScreenshotFigure
       src="/images/zenmerch/screenshots/Admin-Products.png"
@@ -65,6 +87,9 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
       <li>Test uploads (if used): preview renders correctly and limits behave as expected.</li>
       <li>Add to cart and place a test order.</li>
     </ol>
+    <p>
+      If anything looks off, start with <a href="/products/zenmerch/docs/troubleshooting">Troubleshooting</a>.
+    </p>
 
     <ScreenshotFigure
       src="/images/zenmerch/screenshots/Frontend-PerosnalizedProduct.png"
@@ -75,8 +100,15 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
 
     <h2 id="support">Support</h2>
     <p>
-      Use the <a href="/contact">contact form</a> or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      Use the <a href="/contact">contact form</a> or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. To resolve issues quickly,
+      please include:
     </p>
+    <ul>
+      <li>Your <strong>myshopify.com</strong> domain (e.g. <code>your-store.myshopify.com</code>)</li>
+      <li>The theme you’re editing (Live vs Draft) and the theme name</li>
+      <li>An example product URL where the personalizer should appear</li>
+      <li>Screenshots of Theme Editor → <strong>App embeds</strong> and ZenMerch → <strong>Settings → Theme integration</strong></li>
+    </ul>
   </article>
 </ZenmerchDocsLayout>
 

@@ -13,16 +13,27 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
 
     <h2 id="block-not-showing">The personalizer isn’t showing on the storefront</h2>
     <ul>
-      <li>Confirm the ZenMerch <strong>app embed</strong> is enabled in Theme Editor (App embeds → ZenMerch) and you clicked <strong>Save</strong>.</li>
-      <li>Confirm you’re checking the same theme (published theme vs draft theme).</li>
+      <li>
+        Confirm the ZenMerch <strong>app embed</strong> is enabled: Shopify admin → <strong>Online Store → Themes → Customize</strong> →{" "}
+        <strong>App embeds</strong> → ZenMerch → <strong>Save</strong>.
+      </li>
+      <li>Confirm you’re checking the same theme (Live/published theme vs draft theme).</li>
       <li>Confirm the product is actually <strong>targeted</strong> by a template (Products assignment or Rules).</li>
+      <li>
+        Check plan/usage: ZenMerch → <strong>Settings → Plan & limits</strong>. If a limit is exceeded and the personalizer is configured to hide,
+        it won’t show on storefront until usage drops or you upgrade.
+      </li>
+      <li>Hard refresh the product page, or test in an incognito/private window (reduces caching + extension interference).</li>
+      <li>Disable ad blockers / privacy extensions temporarily (they sometimes block embedded scripts).</li>
     </ul>
 
     <h2 id="changes-not-updating">My changes don’t show on the storefront</h2>
     <ul>
       <li>You might have edited a different theme than the published theme.</li>
       <li>You might have forgotten to click <strong>Save</strong> in Theme Editor.</li>
-      <li>In ZenMerch, use <strong>Refresh status</strong> to rescan after theme changes.</li>
+      <li>
+        In ZenMerch → <strong>Settings → Theme integration</strong>, use <strong>Refresh status</strong> after theme changes.
+      </li>
     </ul>
 
     <h2 id="preview">Preview is not updating</h2>
@@ -32,11 +43,30 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? "support@zenovee.co
       <li>Check validation rules (required fields / limits) if input is being blocked.</li>
     </ul>
 
+    <h2 id="webhook">Webhook test is failing</h2>
+    <ul>
+      <li>ZenMerch → <strong>Settings → Notifications</strong> → confirm <strong>Webhook URL</strong> is a valid, publicly reachable HTTPS endpoint.</li>
+      <li>Click <strong>Send test webhook</strong> and check your server logs for the request and response status.</li>
+      <li>If you get 401/403, your endpoint is rejecting the request (auth/firewall/allowlist).</li>
+    </ul>
+
+    <h2 id="exports">I can’t export orders (CSV)</h2>
+    <ul>
+      <li>ZenMerch → <strong>Orders</strong> → exports may be restricted on some plans.</li>
+      <li>Check ZenMerch → <strong>Plans</strong> (billing) to confirm exports are included for your plan.</li>
+    </ul>
+
     <h2 id="support">Still stuck?</h2>
     <p>
-      Contact us via <a href="/contact">contact form</a> or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. Include your store URL,
-      theme name, and a screenshot of Theme Editor showing ZenMerch enabled in <strong>App embeds</strong>.
+      Contact us via <a href="/contact">contact form</a> or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. To speed up support,
+      include:
     </p>
+    <ul>
+      <li>Your <strong>myshopify.com</strong> domain</li>
+      <li>The theme name you enabled ZenMerch on (Live vs Draft)</li>
+      <li>An example product URL + what you expected to see</li>
+      <li>Screenshots of Theme Editor → <strong>App embeds</strong> and ZenMerch → <strong>Settings → Theme integration</strong></li>
+    </ul>
   </article>
 </ZenmerchDocsLayout>
 

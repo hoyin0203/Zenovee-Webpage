@@ -52,6 +52,17 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
       <li><strong>Vendor</strong></li>
       <li>Product <strong>type</strong></li>
     </ul>
+    <p>
+      We recommend tag-based targeting for most stores because it’s easy to manage and very Shopify-native.
+    </p>
+
+    <h3 id="shopify-tags">Shopify tag setup (recommended)</h3>
+    <ol>
+      <li>Shopify admin → <strong>Products</strong> → open a product.</li>
+      <li>In the product editor, find <strong>Tags</strong> and add a tag (example: <code>zenmerch</code>).</li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>In ZenMerch, create a rule that targets products with that tag.</li>
+    </ol>
 
     <ScreenshotFigure
       src="/images/zenmerch/screenshots/Admin-Products.png"
@@ -59,6 +70,20 @@ import ScreenshotFigure from "../../../../components/ScreenshotFigure.astro";
       caption="Scale tip: rule-based targeting reduces manual product-by-product assignment."
       aspectClass="aspect-[16/9]"
     />
+
+    <h2 id="verify">Verify targeting</h2>
+    <ol>
+      <li>Open the tagged product page on your storefront.</li>
+      <li>Confirm the personalizer loads and the preview updates when you change fields.</li>
+    </ol>
+
+    <h2 id="troubleshoot">If targeting isn’t applying</h2>
+    <ul>
+      <li>Double-check the product was <strong>saved</strong> after adding the tag.</li>
+      <li>Confirm you’re viewing the same theme you enabled ZenMerch on (Live vs Draft).</li>
+      <li>Confirm the rule/template is enabled and not overridden by a more specific rule.</li>
+      <li>Try a hard refresh or an incognito window to bypass cached storefront assets.</li>
+    </ul>
   </article>
 </ZenmerchDocsLayout>
 
